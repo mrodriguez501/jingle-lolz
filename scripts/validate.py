@@ -63,7 +63,17 @@ def main():
             assert "All Doors Unlocked" in text, f"{path}: preview title missing"
         print(f"PASS {path.relative_to(ROOT)}: 25 entries and QR images verified")
 
-    assert (ROOT / 'site/index.html').read_bytes() == (ROOT / 'variants/mobile-daily.html').read_bytes(), "site/index.html and mobile-daily variant differ"
+    published = (ROOT / "site/index.html").read_bytes()
+    daily_variant = (ROOT / "variants/mobile-daily.html").read_bytes()
+    # Analytics is installed only on the published calendar.
+    published_calendar = re.sub(
+        rb"(<head>\r?\n)<!-- Google tag \(gtag\.js\) -->\r?\n.*?<!-- End Google tag -->\r?\n",
+        rb"\1",
+        published,
+        count=1,
+        flags=re.DOTALL,
+    )
+    assert published_calendar == daily_variant, "site/index.html and mobile-daily variant differ beyond the Google tag"
     assert (ROOT / '.github/workflows/deploy-pages.yml').exists(), "Missing deployment workflow"
     print("PASS Published site is the daily-unlock mobile-first version")
     print("PASS Video data matches all four variants")
