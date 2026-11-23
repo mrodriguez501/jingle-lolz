@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a2c24">
+<meta name="description" content="Savor 25 delicious morsels of internet glory. One new door unlocks each day, December 1–25, 2026. Open it to discover a marvelous treasure from days of yore.">
+<title>jingle-lolz · Viral Video Advent Calendar</title>
+<style>
+:root{
+  --ink:#102f28; --evergreen:#0b3028; --deep:#081f1b;
+  --cream:#fff9e9; --gold:#eccb86; --brass:#bf9655;
+  --rose:#e98d7c; --snow:#fffdf5;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; color:var(--cream); overflow-x:hidden;
+  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  background: radial-gradient(ellipse at 50% -12%, #245848 0%, transparent 43%),
+              radial-gradient(ellipse at 100% 65%, #123e35 0%, transparent 42%),
+              linear-gradient(160deg,#0d342b 0%,#071c19 100%);
+  min-height:100vh;
+}
+body:before{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.15;
+  background-image:radial-gradient(circle,#fde9b9 1px,transparent 1.7px),radial-gradient(circle,#fde9b9 1px,transparent 1.7px);
+  background-size:103px 127px, 171px 153px; background-position:18px 12px, 55px 88px;
+}
+a{color:inherit}
+button{font:inherit}
+button:focus-visible,a:focus-visible{outline:3px solid #f8e6a9;outline-offset:5px}
+.shell{position:relative;z-index:1;width:min(1170px,calc(100% - 46px));margin:0 auto}
+.masthead{padding:51px 0 12px; text-align:center}
+.eyebrow{display:flex;align-items:center;justify-content:center;gap:14px;font-size:11px;letter-spacing:.26em;font-weight:800;color:#ead49e;text-transform:uppercase}
+.eyebrow:before,.eyebrow:after{content:"";width:28px;height:1px;background:var(--gold);opacity:.7}
+.top-ornament{display:block; font-size:26px; margin:21px auto 7px; color:var(--gold);letter-spacing:.1em}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(46px,7.1vw,91px);font-weight:500;line-height:.96;letter-spacing:-.055em; margin:15px auto 10px;max-width:920px;text-wrap:balance;text-shadow:0 3px 22px #0618126b}
+h1 span{color:var(--gold);font-style:italic;white-space:nowrap}
+.subtitle{margin:18px auto 0;max-width:580px;color:#d6e1d8;font-size:clamp(14px,1.55vw,17px);line-height:1.7}
+.lights{display:flex;justify-content:center;align-items:center;gap:18px;margin:32px auto 30px}
+.lights:before,.lights:after{content:"";height:1px;background:linear-gradient(90deg,transparent,#bc9a63,transparent);width:min(17vw,180px)}
+.light{font-size:16px;color:var(--gold);transform:rotate(15deg)}
+.light:nth-child(2){font-size:12px;transform:rotate(-12deg);color:#dca79b}
+.light:nth-child(3){font-size:17px;color:#e4cf9d}
+.panel{padding:18px 23px;margin-bottom:24px;border:1px solid #d4b77b50;border-radius:13px;background:linear-gradient(110deg,#184339a9,#0d3429aa);box-shadow:0 11px 40px #020c0c25;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.stats{min-width:0;display:flex;align-items:center;gap:16px}
+.stats-icon{display:grid;place-items:center;width:44px;height:44px;border:1px solid #e8c78d66;border-radius:50%;font-size:21px;color:#f0d8a0;flex:none}
+.stats-title{font-size:14px;font-weight:700;letter-spacing:.02em}
+.stats-subtitle{font-size:12px;color:#b6cdc0;margin-top:4px}
+.progress-outer{width:clamp(85px,18vw,220px);height:7px;background:#456256;border-radius:50px;overflow:hidden;margin-top:8px}
+.progress-bar{width:0;height:100%;background:linear-gradient(90deg,#f0b489,#f5db98);border-radius:40px;transition:width .5s ease}
+.utility{display:flex;align-items:center;gap:9px}
+.utility-btn{border:1px solid #dfc58b75;color:#eddfbe;border-radius:7px;padding:10px 13px;background:#0b2d2459;font-size:12px;font-weight:700;letter-spacing:.035em;cursor:pointer;transition:background .2s,transform .2s;white-space:nowrap}
+.utility-btn:hover{background:#2a5444;transform:translateY(-1px)}
+.calendar{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;padding:0 0 19px;perspective:1200px}
+.window{position:relative;isolation:isolate;aspect-ratio: .84 / 1;min-width:0;max-height:258px;border:3px solid #e7c68b;border-radius:8px;background:#fff9e9;box-shadow:0 9px 0 #031c17,0 17px 21px #00000063,inset 0 0 0 3px #bd9c68;transform-style:preserve-3d}
+.window:after{content:"";position:absolute;inset:5px;border:1px solid #b48f5391;pointer-events:none;z-index:0;border-radius:3px}
+.window.is-open{z-index:7}
+.inside{position:absolute;inset:5px;border-radius:3px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;background:radial-gradient(ellipse at center,#fffef8,#fbecd0);color:#254034;overflow:hidden;transition:background .3s}
+.inside::before,.inside::after{content:'✧';position:absolute;color:#c59c5e;opacity:.45;font-size:18px;z-index:0}
+.inside::before{top:6px;left:9px}.inside::after{bottom:5px;right:9px}
+.unwrapped{font-weight:900;letter-spacing:.18em;font-size:10px;color:#6c704d;margin-top:10px}
+.qr-link{display:block;position:relative;z-index:1;background:#fffaf0;border:4px solid #fffaf0;box-shadow:0 3px 12px #624a261c;border-radius:3px;width: min(65%, 140px);aspect-ratio:1;transition:transform .2s}
+.qr-link:hover{transform:scale(1.035)}
+.qr-link img{display:block;width:100%;height:100%;image-rendering:pixelated}
+.watch-link{position:relative;z-index:1;font-size:11px;letter-spacing:.04em;font-weight:850;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;color:#285241;min-height:19px}
+.close-door{position:absolute;z-index:2;right:6px;top:5px;border:0;color:#435c4a;background:none;cursor:pointer;padding:5px 7px;border-radius:4px;font-size:17px;line-height:1}
+.close-door:hover{background:#f0e8d4}
+.door{position:absolute;inset:0;z-index:2;width:100%;height:100%;transform-origin:left center;transform:rotateY(0deg);transform-style:preserve-3d;backface-visibility:hidden;cursor:pointer;border:0;padding:10px;background:var(--door-bg,#a63337);color:#fff2d7;border-radius:4px;outline-offset:5px;
+  box-shadow:inset 0 0 0 2px #f1d99d88,inset 0 0 0 7px #0000001c,1px 0 8px #0003;
+  transition:transform .84s cubic-bezier(.21,.82,.19,1),box-shadow .8s;will-change:transform;
+}
+.door:before{content:"";position:absolute;inset:15px;border:1px solid #eacc90a6;border-radius:95px 95px 7px 7px;pointer-events:none}
+.door:after{content:"";position:absolute;right:10px;top:48%;width:9px;height:9px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff7d9,#d7a14e 75%);box-shadow:0 1px 3px #351d1d80}
+.window.is-open .door{transform:rotateY(-84deg);box-shadow:inset 0 0 0 1px #f2d9a6, 15px 9px 25px #030f0d75;pointer-events:none}
+.door-deco{position:absolute;top:16%;left:0;right:0;font-family:Georgia,serif;font-size:clamp(16px,2vw,25px);color:#f0d9aa;opacity:.93}
+.day-label{display:block;position:absolute;top:38%;left:0;right:0;font-family:Georgia,serif;font-weight:400;font-size:clamp(43px,5vw,73px);line-height:1;letter-spacing:-.06em;text-shadow:0 3px 12px #491f1445}
+.door-bottom{position:absolute;bottom:18%;left:0;right:0;font-size:10px;font-weight:850;letter-spacing:.23em;color:#ffecb8}
+.door-green{--door-bg:linear-gradient(140deg,#205e4e,#104032 90%)}
+.door-red{--door-bg:linear-gradient(140deg,#bd4948,#8c252e 90%)}
+.door-blue{--door-bg:linear-gradient(145deg,#557785,#2c5962 95%)}
+.door-clay{--door-bg:linear-gradient(145deg,#bc7255,#915036 95%)}
+.door-gold{--door-bg:linear-gradient(140deg,#c59750,#98662f 93%)}
+.door-gold .day-label,.door-gold .door-deco,.door-gold .door-bottom{color:#fff8e9}
+.footer{margin:35px auto 50px;padding:24px 10px 0;text-align:center;border-top:1px solid #e3c78a4a;color:#bdcabe}
+.footer-ornament{font-size:21px;letter-spacing:.2em;color:var(--gold)}
+.footer p{font-size:13px;line-height:1.7;margin:10px 0 6px}
+.footer .small{font-size:11px;color:#93aca0}
+.overlay-orn{position:absolute;pointer-events:none;opacity:.45;font-size:clamp(38px,4vw,72px);font-weight:300;color:#d0b47d;font-family:Georgia,serif}
+.left-orn{top:110px;left:-14px;transform:rotate(25deg)}
+.right-orn{top:166px;right:-14px;transform:rotate(-21deg)}
+.snowflake{position:fixed;pointer-events:none;z-index:0;color:#fbebce;opacity:.28;font-size:14px;animation:drift linear infinite;top:-25px}
+@keyframes drift{from{transform:translate3d(0,-20px,0) rotate(0deg)}to{transform:translate3d(40px,105vh,0) rotate(220deg)}}
+
+/* A locked door is disabled until its scheduled Eastern Time calendar date. */
+.window.is-locked .door{cursor:not-allowed;filter:saturate(.68) brightness(.84)}
+.window.is-locked .door:after{background:#b1ad93;box-shadow:0 1px 3px #101d1c60}
+.window.is-locked .door-bottom{letter-spacing:.11em;color:#ffe9b9;opacity:.86}
+.window.is-locked .inside{visibility:hidden}
+.window.is-locked .door:hover{transform:none}
+.utility-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.stats-subtitle{max-width:390px;line-height:1.45}
+
+@media (min-width:1350px){.shell{width:min(1140px,calc(100% - 70px))}}
+@media (max-width:850px){.calendar{grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}.window{max-height:none}.panel{margin-bottom:18px}.shell{width:calc(100% - 32px)}}
+@media (max-width:590px){
+ .shell{width:calc(100% - 32px)}
+ .masthead{padding-top:38px}
+ .calendar{grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+ .window{aspect-ratio:.84/1;max-height:none}
+ .day-label{font-size:clamp(46px,10vw,69px)}
+ .door-deco{font-size:20px}.panel{align-items:stretch;flex-direction:column;padding:14px;gap:15px}
+ .utility{justify-content:space-between}.utility-btn{flex:1}
+ .stats-icon{width:38px;height:38px}.progress-outer{width:56vw;max-width:190px}
+ h1{font-size:clamp(36px,9vw,60px)}
+ .subtitle{font-size:14px}.lights{margin:24px auto}
+ .door-bottom{font-size:9px}
+ .unwrapped{font-size:9px}
+ .qr-link{width:min(66%,120px)}
+ .watch-link{font-size:10px}
+ .overlay-orn{display:none}
+}
+@media (max-width:365px){.shell{width:calc(100% - 22px)}.calendar{gap:10px}.day-label{font-size:45px}.qr-link{width:62%}.watch-link{font-size:9px}}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* Touch-friendly additions: optimized for small-screen Chrome and Safari. */
+html{-webkit-text-size-adjust:100%}
+.door{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+button,a{touch-action:manipulation}
+.reveal-modal{width:min(94vw,440px);max-width:440px;max-height:calc(100dvh - 24px);margin:auto auto 10px;border:1px solid #d6b06b;border-radius:20px;padding:0;color:#17372b;background:#fff9e8;box-shadow:0 14px 48px #0008;overflow:auto;overscroll-behavior:contain}
+.reveal-modal::backdrop{background:#061d18c7;backdrop-filter:blur(5px)}
+.reveal-inner{position:relative;padding:27px 24px 30px;text-align:center}
+.reveal-close{position:absolute;right:12px;top:12px;width:44px;height:44px;border:0;border-radius:50%;background:#e8dfc7;color:#1c422f;font-size:29px;line-height:1;cursor:pointer}
+.reveal-icon{font-size:25px;color:#b98d52;letter-spacing:.15em;margin:0 auto 8px}
+.reveal-kicker{font-size:11px;font-weight:850;letter-spacing:.19em;color:#81633e;text-transform:uppercase}
+.reveal-inner h2{font-family:Georgia,'Times New Roman',serif;line-height:1.05;font-weight:400;font-size:37px;margin:12px 0 18px}
+.reveal-qr{width:min(54vw,200px);height:auto;aspect-ratio:1;background:#fff;padding:9px;border:1px solid #e4d6b8;box-shadow:0 5px 19px #654a2b24;border-radius:12px;display:block;margin:0 auto 16px;image-rendering:pixelated}
+.reveal-watch{display:flex;justify-content:center;align-items:center;min-height:56px;margin:0 auto;background:#15523e;color:#fff9eb!important;border:1px solid #2d6553;border-radius:10px;font-size:17px;font-weight:800;text-decoration:none;letter-spacing:.015em;box-shadow:0 4px 0 #0b3628}
+.reveal-watch:active{transform:translateY(2px);box-shadow:0 2px 0 #0b3628}
+.reveal-note{font-size:12px;line-height:1.5;color:#665c48;margin:15px 0 0}
+@media (max-width:700px){
+ .shell{width:calc(100% - 26px)}
+ .masthead{padding:31px 0 2px}
+ .eyebrow{font-size:10px;letter-spacing:.12em;gap:8px}
+ .eyebrow:before,.eyebrow:after{width:14px}
+ .top-ornament{margin:14px auto 3px}
+ h1{font-size:clamp(43px,12.6vw,70px);letter-spacing:-.047em;margin:12px 0 9px}
+ .subtitle{font-size:14px;line-height:1.55;max-width:370px;padding:0 5px;margin-top:12px}
+ .lights{margin:20px auto 19px}
+ .panel{padding:14px;border-radius:13px;margin-bottom:17px}
+ .stats{gap:11px}
+ .stats-icon{width:36px;height:36px}
+ .stats-title{font-size:14px}
+ .stats-subtitle{font-size:12px}
+ .progress-outer{width:min(61vw,215px);margin-top:7px}
+ .utility-btn{min-height:44px;font-size:13px}
+ .calendar{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px 12px;perspective:1300px}
+ .window{aspect-ratio: .88/1;max-height:none;border-width:2px;box-shadow:0 5px 0 #031c17,0 10px 12px #0007,inset 0 0 0 2px #bd9c68}
+ .door:before{inset:11px}
+ .day-label{font-size:clamp(50px,16vw,74px)}
+ .door-deco{font-size:19px}
+ .door-bottom{font-size:10px;letter-spacing:.1em}
+ .unwrapped{font-size:9px}
+ .qr-link{width:62%}
+ .watch-link{font-size:10px;padding:5px 3px}
+ .footer{margin:24px auto 35px}
+ .reveal-modal{margin:auto auto 0;border-radius:19px 19px 0 0;width:100vw;max-width:100vw;max-height:min(94dvh,720px)}
+ .reveal-inner{padding:30px 23px max(25px,env(safe-area-inset-bottom))}
+ .reveal-qr{width:min(52vw,210px)}
+ .reveal-close{right:10px;top:10px}
+}
+@media (max-width:370px){.calendar{gap:9px}.shell{width:calc(100% - 20px)}.window{aspect-ratio:.83/1}.reveal-qr{width:50vw}}
+@media (prefers-reduced-motion:reduce){.reveal-modal{scroll-behavior:auto}}
+
+
+/* Fallback viewing links for rare videos with removed/restricted uploads. */
+.backup-link{display:block;margin:6px auto 0;max-width:210px;font-size:10px;line-height:1.35;color:#f9edca;text-decoration:underline;text-underline-offset:2px}
+.reveal-backup{display:block;margin:13px auto 0;color:#245a4a;font-size:13px;text-decoration:underline;text-underline-offset:3px;font-weight:700}
+.reveal-backup[hidden]{display:none}
+</style>
+</head>
+<body>
+<div id="snow" aria-hidden="true"></div>
+<div class="shell">
+  <header class="masthead">
+    <div class="eyebrow">The holiday collection · Dec 1–25, 2026</div>
+    <span class="top-ornament" aria-hidden="true">✦ ❋ ✦</span>
+    <h1><span>jingle-lolz</span></h1>
+    <p class="subtitle">Savor 25 delicious morsels of internet glory.<br>One new door unlocks each day, December 1–25, 2026. Open it to discover a marvelous treasure from days of yore.</p>
+    <div class="lights" aria-hidden="true"><span class="light">✳</span><span class="light">✦</span><span class="light">✳</span></div>
+  </header>
+  <main>
+    <section class="panel" aria-label="Calendar progress and controls">
+      <div class="stats">
+        <div class="stats-icon" aria-hidden="true">✦</div>
+        <div>
+          <div class="stats-title" id="count" aria-live="polite">0 of 25 doors opened</div>
+          <div class="stats-subtitle" id="unlock-status" aria-live="polite">The first door unlocks December 1 at midnight Eastern.</div>
+          <div class="progress-outer" role="progressbar" aria-label="Doors opened" aria-valuemin="0" aria-valuemax="25" aria-valuenow="0" id="progress" ><div class="progress-bar" id="progress-bar"></div></div>
+        </div>
+      </div>
+      <div class="utility">
+        <button class="utility-btn" type="button" id="reset">Close opened doors</button>
+      </div>
+    </section>
+    <section class="calendar" id="calendar" aria-label="25 advent calendar doors"></section>
+  </main>
+  <footer class="footer">
+    <div class="footer-ornament" aria-hidden="true">✦ ❄ ✦</div>
+    <p>One new door every day, December 1–25, 2026. Earlier doors stay openable.</p>
+    <p class="small">Scan the QR with another device, or tap “Watch surprise” on this one.<br>New doors unlock at midnight Eastern Time. Progress is saved in this browser. The videos open on YouTube or Vimeo; internet is needed.</p>
+  </footer>
+  <span class="overlay-orn left-orn" aria-hidden="true">❅</span><span class="overlay-orn right-orn" aria-hidden="true">✳</span>
+</div>
+<dialog id="reveal-modal" class="reveal-modal" aria-labelledby="reveal-title">
+  <div class="reveal-inner">
+    <button type="button" class="reveal-close" id="reveal-close" aria-label="Close surprise">&times;</button>
+    <div class="reveal-icon" aria-hidden="true">✦ ❄ ✦</div>
+    <div class="reveal-kicker">A glorious internet relic</div>
+    <h2 id="reveal-title">Day <span id="reveal-day">1</span></h2>
+    <img class="reveal-qr" id="reveal-qr" alt="QR code for today's video" width="210" height="210">
+    <a class="reveal-watch" id="reveal-watch" href="#" target="_blank" rel="noopener noreferrer">▶ Watch the surprise</a>
+    <a class="reveal-backup" id="reveal-backup" href="#" target="_blank" rel="noopener noreferrer" hidden>Video not loading? Try another link ↗</a>
+    <p class="reveal-note">On this phone, tap Watch the surprise.<br>Scan the QR code with another device if you prefer.</p>
+  </div>
+</dialog>
+<script>
+'use strict';
+const VIDEOS = [{"day":1,"url":"https://www.youtube.com/watch?v=HPPj6viIBmU","qr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAIAAABqcO2fAAAE00lEQVR42u3dQWocMRAF0HHoK+Qigdz/AIFcJBuvvXEOYAyiqF9Sz7y3tqenNR/RXUilt8+P9wc8rx+GABEHEQcRBxEHEQcRBxFHxEHEQcRBxEHEQcRBxBFxEHEQcRBxEHEQcRBxEHGe39X1QT9//d54G//+/il8w6//tXIXK/+18n1yY9j1Dc//Tc3iIOKIOIg4iDhscuU+uuuN+LQ3/ZU77aqx1Go+ud/ijr+pWRwPKiDiIOIg4hBwTV5sshqQW+8xea3aupraf02Oc64yYxbHgwqIOIg4iDiMuF755rsqD131gdNWtpjFQcRBxEHEQcThGy9UUelabZKrTuS6wUyuCTGLg4iDiIOIg4jzAkYrKqe913f1oa3daa16k9ub07UexiwOIg4iDiIOIs4LCFZU7rjTpKuTycpodF1rpabRtQ/ojr+pWRwPKiDiIOIg4hDQVlF51n0lk/fVVatZ+ZtaHcYsDiIOIg4iDiIOj8ejsaLStZajZqVb7Gk9UnJVjq672NsxxiwOIg4ijoiDiMPBbrlGJdfBdeVauf0yk51Vcr/FaXdhFseDCog4iDiIOAQE16jU3sdXPnmym8dkv5FcVWGyH8tpZzebxfGgAiIOIg4iDgFvnx/voY/uWgHStSJl7zesXX3F3jOXT6sdmcXxoAIiDiIOIg4jghWVLnvf2XNrMCY7otTsvdOuX9AsjgcVEHEQcRBxCGirqEyu3Mi96U+ecVy7066Rn+xksrcmZhbHgwqIOIg4iDgEXJMXm6wh5CoGe3uxdl0r1+2kdl8604KIg4gj4iDicCub+6isvFmfdrrNaZ1DcnWqvZ9jFgcRBxFHxEHE4WDBs35ye2Fy7+ynnSLUdf5O19Vz46OPCog4iDgiDiIOtzLamfb8s3X2nhB0WpVjRa4/jFkcRBxEHBEHEYeDjXamPa2mUasYdI3G3jGs3UVtxPbWWMzieFABEQcRBxGHgGBn2txajr3rNGrXqt3XaSPftZ/ILA4iDiIOIo6Iw82Ndqbdu1un65NzJw3tPQe56+q1Mez6Tc3ieFABEQcRBxGHEaOdaWv/lVu5sbfzaq2GkDupOXfq8d6RN4vjQQVEHEQcRBwCrjt+6clzmSdXpKz8Ta4WsbcTjj4qIOIg4og4iDjcyi0rKrndKCtO25vTdV+5O81dyywOIo6Ig4iDiMMmoxWV3KqMXI0lt3Yitzfn/L1Lk9/ZLI4HFRBxEHEQcQhoq6jkOnV0fc5KZSZXz+mSu3quErL39B+zOB5UQMRBxEHEISDYmXZS7YTlrhpLbjQmazUrd7G3emMWBxFHxEHEQcThGMFdP5P7ZWrVgK5erF0nCHftqenqXju5f0cfFRBxEHFEHEQcbuW4Pipd7/Vd33Bvl9fcGNbqOTV7d06ZxfGgAiIOIg4iDgGXIZh5r+86D+j8M6C7VtFYowIiDiKOiIOIw8FeqKKyt9NL146erl1Iud1MNdaogIiDiCPiIOJwK6MVlcn9O7XqxN71HrX7mqx7rIzhaacjmcXxoAIiDiIOIg4BwYrK+WtCvrpjL9Zcz9uu/9JHBTyogIiDiCPi8HTePj/ejQJmcRBxEHEQcRBxEHEQcUQcRBxEHEQcRBxEHEQcEQcRBxEHEQcRBxEHEQcRR8Thzv4DHqLjT9iCurEAAAAASUVORK5CYII="},{"day":2,"url":"https://www.youtube.com/watch?v=Cqd1Gvq-RBY","qr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAIAAABqcO2fAAAElUlEQVR42u3dMY7cRhCG0ZXBK/giBnz/AwjwRZwoViKlAhSIaNRfVeS+F+9yZsgPDbLBJr/8+P7tA97rL7sAiYPEQeIgcZA4SBwkjsRB4iBxkDhIHCQOEkfiIHGQOEgcJA4SB4mDxHm/q2pDf//z7+DP+P+/r3/8PlV/c+fTq/ZP1ZbvbGf/MTWKg8SROEgcJA5rXLlNV10Rn13p3/n0szmW2b1R9Q3PtjN7TI3iIHEkDhIHicMaV+eH5e7TuPNZVfMnVXe2zP7SJx5TozhIHImDxEHisMb11h+Wu2Y/2/K2e1065zSM4iBxkDhIHInD61x2wa9yq37e8X2M4iBxkDhIHCQOHx8fzTMqnbMB29a57N/O/mNqFAeJI3GQOEgc1gjOqMxe6d+59s+9D+gdf7P/mBrFQeJIHCQOEochZTMq2+5V6Hw66+/ecR/LO1YYGcVxogISB4mDxCGgbEYld1/E2fxA57uAq+7u6NxO7ijPtmEUx4kKSBwkDhKHFl9+fP/W9mFV7/l96/qU2ftqtr1d2owKSBwkjsRB4rBY63NUqq6R72x59t6Jznf0VM0vdT7Lt3PuyCiOExWQOEgcJA4Bw6t+zlTNe5x9w9zapdntVO2f3HaM4iBxJA4SB4nDGsEn056t7Jh9l802uSerdM4dGcVB4iBxkDgSh9e5nvilc6uHtn3D3GedzdU8cY7FKI4TFZA4SBwkDgHBVT+dW+58Ssm2lUG5O3aqVut4jgo4UQGJg8SROLxO2bt+cvMes7MKVU8Oqfqlue3knpEyex+LURwnKiBxkDhIHAIesOpn27NWcs82qdpO5zuOz3TOuhjFcaICEgeJg8QhIPhk2txVfNW8R9VsQG4f5u42ye35qlqM4iBxkDgSB4nDYsOrfjrfp1x1pT97d0fnL8399s61QkZxnKiAxEHiIHEICM6o7J/leOIbnzvnczrvh7HqByQOEkfiIHF4lEfOqHTOGJz99v2q5qmM4iBxkDhIHCTOp9T6HJXcdX3nk0M61zfN3scy+04lq35A4iBxJA4Sh8XKZlQ6325TdfXd+daeqv862xuza3Nm73UxiuNEBSQOEgeJQ8DwPSq5a/az71y1fudsO53PmD377XeOV9U8lVEcJA4SR+IgcVis9R6Vzi13rrvZds9M5/Hq/O1GcZA4EgeJg8RhjbIn026z7d1D+3XeZZRbS2UUx4kKSBwkDhKHFg+4R6VqNqDq2v9sO7nVTLkt52ZLjOIgcZA4SByJw8NduU3n1nHknoJ756kgnZ9+Z8uzd+NUbSc3D2MUx4kKSBwkDhKHgKvzw2av63NPi+1cw7Lt6Oz/pUZxnKiAxEHiIHEIuD7zj599y3Dn33TuH6M4SBwkDhIHifMJvHZGpfPdQ1VzLLnPyn3D2WNhFAeJI3GQOEgchpS962f2Cj33pI7OuYjOeZiqb3i2D43iIHGQOEgcicPDBWdUOs2u3znbG7NvGa7aP7nj5e3JIHGQOBIHicNiZTMqYBQHiYPEQeIgcSQOEgeJg8RB4iBxkDgSB4mDxEHiIHGQOEgcJI7EQeIgcRjyE29S5n3woCUJAAAAAElFTkSuQmCC"},{"day":3,"url":"https://www.youtube.com/watch?v=0EqSXDwTq6U","qr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAIAAABqcO2fAAAEvUlEQVR42u3dQW7bMBCGUafQFXqRAr3/AQr0It1knU17ACMAwf4zQ8XvrRPLkj8QNiGKb38/3h/wdX1zCZA4SBwkDhIHiYPEQeJIHCQOEgeJg8RB4iBxJA4SB4mDxEHiIHGQOEicr+9KvdD3Hz8HT+PP719tZ/F8rOf/2ns/qWuYeodf4zM1iuOLCkgcJA4ShwJX3UunfhGnfumn5j1WzjR1rJVX7vwsTvtMjeIgcSQOEgeJw5Cr82CdswErx9q7I6VuNmBvZub5b/b+q/O+mrqZGaM4vqiAxEHiIHFocbkE//9Lv27N0eydLUZxkDhIHCQOEodPvNCMyuyzTVLvsPP+E6M4SBwkDhIHicMnWmdUTvtdXzdbklor1Lk2Z/b+HKM4SBwkjsRB4nArhTMqd1xpknqSycrVSB1rZU4jtQ7ojp+pURxfVEDiIHGQOBSIzai88rqSumuYer5uah7GKA4SB4mDxEHi8Hg8gjMqqXs59jwfq+7oqd1t6mY5Zs9072oYxUHiIHEkDhKHWznuHpXUzENqVUvnepnOJ6vUfe6nrQwyiuOLCkgcJA4ShwJvfz/eIy/UeedG6lips0jp3IU59azazmMZxUHiSBwkDhKHY8RmVFK/9DvnEDqfDbvynvfMznvUzW4ZxUHiIHEkDhKHg7Xeo9L52z/1u949Mz2fu1EcJA4SR+IgcbiVwt2T6+7umJ2LqLvXJXWmnddn5bxm72MxiuOLCkgcJA4ShwLX7OFTswGdewGn9jiuWyu0cqzUTEjdVTWKg8RB4kgcJA4HK9zrJ3Wfxuz8ycr76ZwxmN1b5/z5E6M4vqiAxEHiIHFoEZtR6VwLU3fvROfsROosOq9h5xNjrPoBiYPEkThIHA5W+GTaut1k6mZL6p7FetpuOymzzw02ioPEkThIHCQOQ4Z3T677zX7azsizexyn3vPsnJhRHCSOxEHiIHE4xvCMyuxv9tPuNtm7hntOWxXlybQgcZA4EgeJw620PkcltVdy5z0PnTMYqT16Ou+rSc04eY4KSBwkjsRB4nArhc9R2ZtVqDv63mzA7OvUnWnnJ9i53sooji8qIHGQOEgcWlx1L33a3RR1v/Tr1hylVhjtHf20HbGN4iBxJA4SB4nDMYb3+um8ayV1rLqnzq7814q6mZBO7lEBiYPEkThIHA52dR5sdr/g1KqW2ZmZzj2DTivBKA4SR+IgcZA4HKN1r59OdU+Und1XKPVfK6+zd51n349RHF9UQOIgcZA4tCjc66fT3p44szMGe+fVqW7lVOd5GcXxRQUkDhIHiUOB1ifT1v3S35sNSO3zu3c19l45taNx3SdYN3NlFAeJI3GQOEgcjtH6HJXZ1R+zd5vU7U+0dw1TM0Wpo9vrByQOEkfiIHG4let1TrVzN+eVo6+8zt5qptk9oDuPbhQHiSNxkDhIHIa80IzK7JNe6mZdZv8mNTfiHhWQOEgciYPE4VZie/10ruOYXUGzMhswezX23vMdj24UB4kjcZA4SByGFM6odOp8Fmvdk0xOe2JMav1O6sobxUHiSBwkDhKHY8RmVMAoDhIHiYPEQeJIHCQOEgeJg8RB4iBxJA4SB4mDxEHiIHGQOEgciYPEQeIw5B/zRgCS4rDKiAAAAABJRU5ErkJggg=="},{"day":4,"url":"https://www.youtube.com/watch?v=txqiwrbYGrs","qr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAIAAABqcO2fAAAEuElEQVR42u3dzYkbQRCG4bVRCk7E4PwDMDgRX3z2xQ5ALAxF1Vc90vOcd1c/+9KMitb0l39//3zA6/rqLUDiIHGQOEgcJA4SB4kjcZA4SBwkDhIHiYPEkThIHCQOEgeJg8RB4iBxXt+j6w99+/5j8WX8/vWz8Ayff+vKq7jyW1eez9x72PUMz/+fWsVB4kgcJA4ShyWPuT/d9Yn4tE/6V15p14ylNvOZ+1/c8X9qFceFCkgcJA4ShwGP5IMlpwFzO1LmpgG1yczzz9R+K7mvZm4yYxXHhQpIHCQOEoeIx/u81K4Zwtx84LSdLVZxkDhIHCQOEodPvNFEpWsHSPIZPkvuP7GKg8RB4iBxkDh8IjpReZ/P9V3fFUp+N6drP4xVHCQOEgeJg8R5A4MTlVf9pkltH0vX3pLajKVr780d/6dWcVyogMRB4iBxGNA2UXmN/SennRdcm9Vc+ZnaHMYqDhIHiYPEQeLw8fHROFHZvSfJ82PNPXrX6TZzU47dV1p7N6ziIHGQOBIHicOtHHdn2q7Jw9zpyXPfl0neWSX5/6q90q7XZRXHhQpIHCQOEocByxOV88/fSd5vZG42UnufdydXVnGQOEgciYPE4WBf/v39M/Snu3aAJM8UTp5N3DUX6np/ut7VrudsFQeJg8SROEgcDtY2UZnbh5CcPFx59ORU4Y53yq39HXtUQOIgcSQOEodbWf7WT/L7ILXHSu51qb32rv0nV8zNPeZmLFZxXKiAxEHiIHEYMLhHZffT9+7zuSK5Yye5H8Z9VMCFCkgcJA4S5w1E76My972buefc5Y7Pufa6ducnVnFcqIDEQeIgcYg4bo/K+d9GqUlOHk47OXruu0tWcZA4EgeJg8RhSXSikjz9p+s5X/mtrleRnHJ0mXs+JiogcZA4EgeJw8EGv/XzbO6kmNpvJU9GTp5WnLyX79z/yyoOEgeJI3GQOBys7ayf2gwhOWfomhjMTUt2TzXqep9398xYxXGhAhIHiYPEISK6R2Xu0/fcfKBL8hzk3X01tf9O7R2zioPEkThIHCQOS25wenJyYrA7h9k943jO7mnXVnFcqIDEQeIgcRiwPFFJ7ouo/Z0rfzl515Tk/WxfY8JjFceFCkgcJA4ShwHLZ/0kTz0+7YSg3ZlPzR1nLFZxXKiAxEHiIHEY8Nh9+OR5wV3Tid3JzPn38u36TpZVHCQOEkfiIHE4WNtEpWsa0PVYc5/Qkzttuh59dxKye/qPVRwXKiBxkDhIHAYMnp6cdGUnSW3nxvn3qp0zNztKvi6rOC5UQOIgcZA4DLjBWT+1x5o7Iaimaw4z9yqS74+zfsCFCkgcJI7E4eai91FJzhCSn/1rj37aBCO50yY5f7OK40IFJA4SB4nDgMf7vNTdc5m7fqvr20zJM6CvvIf2qIDEQeJIHCQOt/JGE5Wuc4Vqu1bmZjW7P1N7N+ZOULKK40IFJA4SB4lDRHSikrwf6dyOlORdXGrPp+vv7J6pZBUHiYPEkThIHA42OFHZ/aydfPTdO6vM7Zm548TJKo4LFZA4SBwkDhFtZ/2AVRwkDhIHiYPEkThIHCQOEgeJg8RB4kgcJA4SB4mDxEHiIHGQOBIHiYPEYcl/i33wWXxqyqUAAAAASUVORK5CYII="},{"day":5,"url":"https://www.youtube.com/watch?v=kfVsfOSbJY0","qr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAIAAABqcO2fAAAEtklEQVR42u3dS2rcQBRA0ThoC9lIIPtfQCAbycRjT5wFNIai8n4lnTO2+3sRrUdJ9fb58f4N7uu7jwCJg8RB4iBxkDhIHCSOxEHiIHGQOEgcJA4SR+IgcZA4SBwkDhIHiYPEub8r6oF+/PzV+Db+/vld9i5en+v1v/ZeT9RnGPUK7/GdOorjhwpIHCQOEocEV95DR50RR53p580H8mYsK49c+V1M+04dxUHiSBwkDhKHJlflk1VOA1ZmGnsrUvKmAXuTmde/2fuvynU1eZMZR3H8UAGJg8RB4lDies5bjbry5fW/8q456l3Z4igOEgeJg8RB4vCFB01UouYMlVcPrTx73voTR3GQOEgcJA4Shy+UTlTmn9dX3rdk5ZErr82JWg/jKA4SB4mDxEHiPEDiROWuV5rsTV2i1pbszVjmr89xFAeJg8SROEgcjhI2UbnHdSW918tEzWqi3tc9vlNHcfxQAYmDxEHikCBsohK1t86elbvF7l350ruPz8rjrHwXUd9p3vflKA4SB4kjcZA4HOXIO9PmTRXy5kK9q00qv4u8T95RHCSOxEHiIHEY4+3z473syXrXscxXuQtz3j1vo1YHOYqDxEHiSBwkDoMlTlSirrKJ2lM4bz6Qt//Oirw9l/e+ryjWqIDEQeJIHCQOg4VNVKbNGfamAZWvufKOKFGfWF4JrvoBiYPEkThIHI5Seh+Vyru87j171Gyk8lqYvAnG/CmZozhIHImDxEHi0KR0ovLk+4RUTieiZixRn0/ep+EoDhJH4iBxkDg0CZuo9K7ByDtDj7pzyLTXk6f3PrSO4vihAhIHiYPEoUTYRCVvLcfe31TOB/IeeWXykDdjqZzeuI8KSBwkjsRB4nCU5t2T987i866X6d0haNpuOyvy3oWJCkgcJI7EQeIw2LiJSu+Z/srj7L2v3j2OK7/Baa/ZURw/VEDiIHGQOCRI3D15xfxdaeavh9kzbe9mExWQOEgciYPE4SgH7PUTdQVN5d1Q9977ymuetqtR1N+46gckDhJH4iBxOErzGpVXlSs3eleJ7L2e3meP+nzcRwX8UAGJg8SROBwucY1K3j1U8+5bsvI4UdOAvV2Npu1SnfdcjuIgcZA4EgeJw2DXiS866iqSqP2dK2cIldOkvElR3ufjKI4fKiBxkDhIHEokXvWTt0pk/pUvee902h1loz5VExWQOEgciYPE4Shha1Si7jpbeYZeeX/UKHmvsPJ+to7iIHGQOEgcicPhwiYqvWfNK1f0RL2vylUivfOcadMbR3GQOBIHiYPEYYzSO9Pmnenv/U3vbGRlhczea45aJVK5F5KrfkDiIHEkDhKHo5TembbyvH7vcfauYZl2Z9qV9743z4n65O31AxIHiYPEkTgc7vIR/P+5f+WewlGvsHJSlPfsjuIgcSQOEgeJQ5MHTVSi5h69zx51xVPelVN7sxFrVEDiIHEkDhKHozTvntz7XJX3SOmd1eS9i94ruRzFQeJIHCQOEocmiWtUenf/yTvTj7oDSdTUpXK34rxZljUqIHGQOBIHicNRwtaogKM4SBwkDhIHiSNxkDhIHCQOEgeJg8SROEgcJA4SB4mDxEHiIHEkDhIHiUOTf7BP2hvzp79DAAAAAElFTkSuQmCC"},{"day":6,"url":"https://www.youtube.com/watch?v=EIyixC9NsLI","qr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAIAAABqcO2fAAAEy0lEQVR42u3dTYpaQRSAUQ1uIRsJZP8LCGQjmfS4J50FSENxuX/6zhl3q08/Ci3qVd2/Pj9u8L5+eAuQOEgcJA4SB4mDxEHiSBwkDhIHiYPEQeIgcSQOEgeJg8RB4iBxkDhInPf3yHqgn79+D17Gv79/2q7i+bme/yv2erLew6xX+B6fqVEcX1RA4iBxkDgUeNQ9dNYv4qxf+nXzA3VzLCeP3PlZbPtMjeIgcSQOEgeJw5BH55N1zgaczGnEVqTUzQbEZmae/yb2X53raupmZozi+KICEgeJg8ShxePKFx+bLXn+r7p7jmZXthjFQeIgcZA4SBy+cekZlf13D508e936E6M4SBwkDhIHicM3WmdUrvO7Puteoc57c7LWwxjFQeIgcZA4SJwLKJxRecU7TbJ2Mjl5N7Ke62ROI+s+oFf8TI3i+KICEgeJg8ShQNqMynusP9l2XnBsrubkb2LzMEZxkDhIHCQOEofb7ZY4o5K1liPmZLfY2J0vJyfpxF5h3SxH1vs8u2OMURwkDhJH4iBxWGzdGpWsmYesu1o675fp3Fml7nPfdmeQURxfVEDiIHGQOBS4f31+FD101m6o1zn5t/MU5tm/qbt2ozi+qIDEQeIgcWhROKNS90s/65FP1J1NnDVTNHvmcudVGMVB4kgcJA4ShzWGT0/uvIMma96jbq4m60qz3sNtn7tRHCSOxEHiIHFYI22NyrZf6LNrVDrvhalb1ZP1X7FaslatGMXxRQUkDhIHiUOBwhmVuvs4Zu8eis0PZM0YzK6HqVtt4q4fkDhIHImDxOGltO5M+x57n3bOn2S9ns6ZkNl9aI3i+KICEgeJg8ShResaldk9SbKuK6Zz5mH2Nceuom6Nk1EcX1RA4iBxkDgUGJ5RyfqlX/ea6649a45l9nRpa1TAFxWQOEgcJM4lDZ+ePPtLf/ZvTt6f66xssY8KSBwkjsRB4vBS0k5P7jxJp242IPaaY+/P8+N07vRy8uz7z2U2ioPEkThIHCQOQ9btTBvTOevyrucgx650/07CRnF8UQGJg8RB4lCgcB+VmM5VK9vOFJ49qXn23hw704LEQeJIHCQOL+VR99B18wyzsyVZswEnz163zqdzjUrsUzaKg8RB4kgcJA6LrTvrZ/Ycn22nA3fOTmzb/8QaFZA4SByJg8Rhsce2FzS7KqPud33sSmOvZ9t5ynWfjlEcJI7EQeIgcRiSNqOSNRuQ9Vx1v9DrdvyYffa6mZDZGR6jOL6ogMRB4iBxKDB8enKWrJOIn6+i88Sik+vqtG32xigOEkfiIHGQOKzRujNt3S/92GzA7PnOJ7M3sXd1drfYrHuy7KMCEgeJI3GQOCzWuo/K7E4mnefUxNa6dL6HsfmcmKwTsY3iIHEkDhIHicMaj+tcaufdOifP/uxkniFrpU3WLEfW/rrWqIDEQeJIHCQOL+VCMyp1Zzdn7c6ateNu599knZFtjQpIHCSOxEHi8FJaZ1Q69yONzU7U3VNTt6dr1rzHtlOPjeIgcZA4EgeJw2L3r8+PlAfadtZP3Z4t+2ddZu9mqrvDyCgOEkfiIHGQOKyRNqMCRnGQOEgcJA4SR+IgcZA4SBwkDhIHiSNxkDhIHCQOEgeJg8RB4kgcJA4ShyH/AXCd40nrwRrbAAAAAElFTkSuQmCC"},{"day":7,"url":"https://www.youtube.com/watch?v=Z3ZAGBL6UBA","qr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAIAAABqcO2fAAAExklEQVR42u3dQY7aQBCGUYi4Qi4SKfc/QKRcJBvWbMgB0ChWpf7qNry3ngEMnyy7ZLevz8f9Au/rm68AiYPEQeIgcZA4SBwkjsRB4iBxkDhIHCQOEkfiIHGQOEgcJA4SB4mDxHl/t64X+v7j58LN+PP719hWvL7X63/VPk/Xd9j1Cd/jN7UXx4EKSBwkDhKHgFvupbvOiHNn+rtNMGqvPPlb7P+b2ovjQAUkDhIHicOI2+SbTU4DcjON3DSgNpl5/Zvaf01eV5ObzNiL40AFJA4SB4nDiJuv4P/P9HP3HK29ssVeHCQOEgeJg8ThCyYq/zA5i6hdD5O7/sReHCQOEgeJg8ThC6MTlf3P62vzitqWHnmdyXtz1l6fYy8OEgeJI3GQOJxKcKJyxjtNulYyOfJtdL3XkZlG131AZ/xN7cVxoAISB4mDxCGgbaLyyfeV5L7D2qzmyN/U5jD24iBxkDhIHCQOl8ulcaLSdS1Hzet75d696+k2uSnHbk+Xrm2FvThIHCSOxEHisLFTXqOSW8E1Nxdae7XJ5G/RtaVd22UvjgMVkDhIHCQOAaPXqHSdNU+u5jG53khuNtI1F5pc+8VeHCQOEkfiIHHY2AmuUcmt6ZqbIdS2q+sTrp1pdM2gXKMCEgeJI3GQOGzs+nzcx86su870J9f3mJzVTG5p1+fJ/aYmKiBxkDgSB4nDxtomKvuvYlpbu6Prv7pe+ch25WY1k3dpmaiAxEHiSBwkDhsLTlTW3leSm8NMXqNS2/bae+125Y+9OEgcJI7EQeKwsRPc9TN5vUdtu47Ybb7UNT9Z+1vYi4PEkThIHCQOi4w+66drNpI7Z9/tKUK15yVNTku63ss6KiBxkDgSB4nDqYze9ZM70699wtwrT15pMzkFyn0ed/2AxEHiSBwkDqdy2+0DdV0XUXumcO1Kidw6IZP31NRmPpOTNHtxkDgSB4mDxGEbiycq+z9Pueu9jmzX2qcadU1C1s5P7MVxoAISB4mDxGHE4mf97LY+6uR/5b7Drm/+PVYSthfHgQpIHCQOEoeA4ETliK6JQdffdG1XTe7z5CYzXaxMCxIHiSNxkDicSvCun9yapbtdKZGb1eRWKVn7jJ7J6Y29OA5UQOIgcZA4BCx+1k9u5ZDcGfpu9+a8WvuUpbVPdLIXx4EKSBwkDhKHEYtXps2tW5K7O2btFCh3n9Tk7zX5PCB7cRyogMRB4iBxCGibqEzOInJXSqxdSyT3CSefuZz7L3txkDgSB4mDxGEbbROVtc/MrT0L+Mjf7LZdk3LzpcntshfHgQpIHCQOEoeA0ZVpc2f6tb858pkn73PpupIktyZw169z5L+sowISB4kjcZA4bGx0HZXJ8/quz5NbgWRyXrH2apzJNYrtxXGgAhIHiYPEYcTtcza1a4Kx9inMk8+Szq2COzljsRfHgQpIHCQOEoeAD5qo1OYeuSf7HHn32utM/s3aO4zsxUHiSBwkDhKHRUYnKpPrkdamE/tfcZFb6aXrO7QXB4mDxEHiIHE+QHCisvZc+3PWYp1cI6XrziDrqIDEQeIgcSQOJ3d9Pu6+BezFQeIgcZA4SBwkDhJH4iBxkDhIHCQOEgeJI3GQOEgcJA4SB4mDxEHiSBzO7C9yoeWhg+z/WAAAAABJRU5ErkJggg=="},{"day":8,"url":"https://www.youtube.com/watch?v=y8Kyi0WNg40","qr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAIAAABqcO2fAAAEtElEQVR42u3dS4qcYBSA0argFrKRQPa/gEA2kkmPe9JZQAjI5b7Uc8bpVGl9iF7U//31+fGC+/pmFyBxkDhIHCQOEgeJg8SROEgcJA4SB4mDxEHiSBwkDhIHiYPEQeIgcZA493dk/Ufff/wc3Iw/v38FvuG/f3VmK8781ZnvU7cPs77h/t/UURwkjsRB4iBxGHLU/ddZV8TbrvTPbGnWjCU286n7La74mzqK40QFJA4SB4lDgaPzwzqnAXX3e3R+Vuy+mthfde7nusmMozhOVEDiIHGQOLQ4nrzxWZOHrPnAtjtbHMVB4iBxkDhIHP7jQROV/dOJurfBdN4T4igOEgeJg8RB4jxA60Rl23V93eQh61mhzmdzsiZOjuIgcZA4SBwkzgMUTlTu8aRJ1gpBWfeWxGYsWXfaXPE3dRTHiQpIHCQOEocCaROVuz5X0rldWbOaM/8mNodxFAeJg8RB4iBxeL1eiROVrHs5Ys68LXb2roy6u03qvvPsG2McxUHiIHEkDhKHxS75Ztq6qULdXGj2bpPO3yJrS7O2y1EcJyogcZA4SBwKvL8+P9o+rO5dIp3TgDqdqzBnzTT2rz3kKI4TFZA4SBwkDgXWTVQ6r9ljU4XO9XfOqNuHsb1RtxWO4iBxJA4SB4nDGq0TlSzb7q+ITRU634gSkzUpyvotHMVB4kgcJA4ShzXSJip1dzjU3QFSNzHY9txN1l9l8R4VcKICEgeJI3G4uMKJyrYZwux8IGtikPVZs88cZe0NR3GQOBIHiYPEYUjaWj911+yd85P96wVve5tubB96My1IHCQOEkficHFpE5XO97Vuu2bP2mOxrZhdCynr3iTvUQGJg8SROEgcLmV4rZ/YVXznKsOdWzG72k7M/tV/HMVxogISB4mDxKFA65tpt13pd66MPLvGcecv2PmdHcVB4kgcJA4ShyGF96hsW+M49p3r1jjeNveo+6y6veEoDhJH4iBxkDgMGV49Oesqvu4pm86Jwew6yLPPQMX2mKM4SByJg8RB4jBk3USl80o/9g1n1wPq/PTOuYc304LEQeJIHCQOl3LU/ddZV+ix+0+yphN1zxzVfXrst+i816VzRWxHcZyogMRB4iBxKFB4j8rs+sX7Vwi66xtasrhHBSQOEkfiIHFY7Jj9+M71grOmE7OTmc41g7LMPs3kKI4TFZA4SBwkDgXSJiqxOUPdX9Vdoc/ejdP5/tis7zN794ujOE5UQOIgcZA4FEibqMxeNc++R6Vub9z1yanO7XIUx4kKSBwkDhKHAq1vpq270o9NA+qmLmf2xpl3w8b2atZdIp3vY7HWD0gcJI7EQeJwKa3vUem8rq/7Plmf1TmvyJrnxFjrB5yogMRB4kgcbud48sZ3XulnvVE29p0714DOuovGPSogcZA4EgeJw2IPmqjMPo2S9URP1lNInU8znfkr96iAxEHiSBwkDpfSOlHpfB9p3Qo4dfd7xLar7jmg2TWVHMVB4iBxJA4Sh8UKJyqz19rPeRdr1swntl11ay47ioPEQeJIHCQOi72/Pj/sBRzFQeIgcZA4SBwkDhJH4iBxkDhIHCQOEgeJI3GQOEgcJA4SB4mDxEHiSByu7C9xJNn/3o9f4AAAAABJRU5ErkJggg=="},{"day":9,"url":"https://www.youtube.com/watch?v=nGeKSiCQkPw","qr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAIAAABqcO2fAAAEvElEQVR42u3dQYrbQBCGUTvoCrlIIPc/QCAXyWbWs5kcwAyIpurvkvXeesaWrY9Gblqt59fnxwPe1w9fARIHiYPEQeIgcZA4SByJg8RB4iBxkDhIHCSOxEHiIHGQOEgcJA4SB4nz/o6qF/r56/fGj/Hv75+FI3z9rzOf4sx/nTmevu+w6gjnn1OjOEgciYPEQeKwydH30lW/iPt+6U+bwVh75eS5mH9OjeK4UAGJg8RB4hBxJN8sORtQtSojuZZjbWbm9W/W/iu5rqZvZsYojgsVkDhIHCQOEcd9PuraHT3J+YFpK1uM4iBxkDhIHCQO37jRjMra6o69R/gquf7EKA4SB4mDxEHi8I3ojMp9ftdX3SuUvDdn7/ocozhIHCSOxEHicCmNMypXvNOkaieTM99G1XudmdOoug/oiufUKI4LFZA4SBwkDg3KZlTeY/3JtLt+1uZqzvzN2jyMURwkDhIHiYPE4fF4FM6oVK3lWPP6Xmvv3rfXSt9qkzPnouqc9p0vozhIHCSOxEHicCnj1qhUzTwknzt8xt7VJn3mP1fIKI4LFZA4SBwkDg2eX58fJS/Ut0/IfWYDkk9h7tvztmp1kFEcJA4SR+IgcRjskvuoJJ8XnJyLqLqfqG8uq+qeo+QZNIrjQgUkDhIHiUODxjUqVb+j9+7m0XeEyR1Rqr6f5EokMyogcZA4EgeJw2DRGZWq3/V9R9i3n21yTUjfSpJkCWZUQOIgcSQOEofBxu2jUvWbvW9XkKo5hOR8RXKOJVmCURwkjsRB4iBx2KRsRmXvL/TkMa+ZdszT9gQ2ioPEQeJIHCQOl1K2M21y/cm0JwhXfWOvznyu5D1H01YHGcVB4kgcJA4Sh00a16hUzSH0/dZO7kCyd5ajT3LnGaM4SByJg8RB4jDGuJ1pp+2q2ve8m6p3r/rsVWd52jEbxXGhAhIHiYPEocGx9+2T8wx713Kc+RTTnmq091k/RnGQOEgciYPEYbCyGZW997lMuxfmzKd4tTbrMn9XmTPH7K4fkDhIHImDxOFSonf97J0NmDbHcub76fsUfU9Zso8KuFABiYPEQeLcQONdP33rRtZ+s/ftiNI38zD/qT1r5zQ5k2YUx4UKSBwkDhKHBscVD7rqLpLkc36Tu5RM24+l71s1ioPEkThIHCQOm4ybUelbN7L2Sz95F9KZ90rO3uw9X0ZxkDhIHImDxGGwxp1p1/6m6r3eVXJvk7Xj6fsvozhIHImDxEHiMEbZjMrefV/7dk3pm8FY+1xJfWtdkp/LKI4LFZA4SBwkDg2iO9P2/dJfmw1IzrFU3ZdU9V59Z9A+KuBCBSQOEgeJcwPRfVSm7WSSfG5OcmfatWPuW2W096nZRnFcqIDEQeIgcWhw3PnDJ5+bU7Wj7PxnQFetorFGBSQOEkfiIHEY7EYzKnvvRqmavVlbD9P3N1VzI9aogMRB4kgcJA6XEp1RSe5H2re+om+9x9rn6tsFt+qpx8l7fIziuFABiYPEQeIQ8fz6/Ch5oWnP+knOM1S9TtU8Q/Jc7N0F1ygOEkfiIHGQOGxSNqMCRnGQOEgcJA4SR+IgcZA4SBwkDhIHiSNxkDhIHCQOEgeJg8RB4kgcJA4Sh03+A7w/9r/RJN1TAAAAAElFTkSuQmCC"},{"day":10,"url":"https://www.youtube.com/watch?v=y3yRv5Jg5TI","qr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAIAAABqcO2fAAAEvUlEQVR42u3dQYrbQBCGUTv4CrlIIPc/QCAXycZrb5wDDAOiqb+6ZL23nrEl+6ORm1br/n49b/C5fvgIkDhIHCQOEgeJg8RB4kgcJA4SB4mDxEHiIHEkDhIHiYPEQeIgcZA4SJzP96h6oZ+/fm88jX9//7Sdxdf3+vpfa8dT9RlWHeFnfKdGcVyogMRB4iBxCHjkXrrqF3HVL/2qeY8jZ1r1XkdeufO7mPadGsVB4kgcJA4Sh00enW/WORuQm9PIzQaszcx8/Zu1/+pcV5ObmTGK40IFJA4SB4lDi8d1TvXIHMLazEPunqO9K1uM4iBxkDhIHCQO37jQjMraapPO2YncEXauCTGKg8RB4iBxkDgX0DqjMu13fW7+pOpeoc57c3J3RRnFQeIgcZA4EoePE5xR+dQ7TdZmXarWlqzNsVTNFJ3xOzWK40IFJA4SB4lDQNmMymfcVzLtecFrczVH/mZtHsYoDhIHiYPEQeJwu90KZ1Sm7UCy9u5rT9JZO8LcLEfV57x3xxijOEgcJI7EQeIw2Cl3ps3t4JqbF9q72qTzu6g606rzMorjQgUkDhIHiUPA5hmVqr1Ecjr3G8nNjXTuxzLt2UNGcVyogMRB4iBxCAjuo9J5z0jnvq+55+9UzcPsndOYttLGKI4LFZA4SBwkDgH39+u58e2r9jZZ+6+qX/F7n7Cc0znjlPt2jOK4UAGJg8RB4hAQ3Jm26jd71X9V/YrPrXU5cqbTziL37RjFQeIgcSQOEofBytaodK5M2HsPS9WMQdW9QlXv1TnD464fkDhIHCSOxOHkgnf97F2DkTvmNXuPuXMWqPM5PkZxkDgSB4mDxGGT1jUqnc/x2btHypHjyc087D3mtbOwjwpIHCSOxEHicCqbZ1TWfsXnZkuqZjA6d1aZv3tt1SsbxUHiSBwkDhKHMR7zD3Hv6o61d6+aq5l/7p178BrFQeJIHCQOEocxWp+ePO2pNFVHeOR1quYQpt3RU8WMCkgcJI7EQeJwKq0zKkfmBzr33Ji/p+v85yXlPkN3/YDEQeJIHCQOg51gH5Wq48mZ9iSdaa9c1Y9RHCSOxEHiIHEYo3Uflb2zJbl5j6pVIkf+puosqtaWTNuH1iiOCxWQOEgcJA4tLrRGZdoKkGnrRqq+Hc/6ARcqIHGQOEicCxj3rJ+9qzJyv+vXznTteKZ9hkfOIneXllEcFyogcZA4SBwCymZUqmYDqt5r75NrcnJrXfY+c9koDhIHiSNxkDicStmMyrRn7+Z2Mtl7Xp1yu8V2npdRHBcqIHGQOEgcAoJ3/XTeL7P2N5130FSt3FhbCzRtP5a1z9koDhJH4iBxkDiM0bqPyrSdTDp/11e9cu75RLnVOFVPRzKKg8SROEgcJA5jPK5zqnt/11eth1k7i6q/WTvm3LsbxUHiSBwkDhKHTS40o9J5r1DulavOovPT6Ny12CiOCxWQOEgcJA4tWmdUOu/fyT0PaO+Ki87nDuc+QzvTgsRB4iBxJA4nF5xR2fuUnNwv/aodSKpmXTrnWObf42MUx4UKSBwkDhKHFvf36+lTwCgOEgeJg8RB4iBxkDgSB4mDxEHiIHGQOEgciYPEQeIgcZA4SBwkDhJH4nBm/wHKU+gjrs+qtAAAAABJRU5ErkJggg=="},{"day":11,"url":"https://www.youtube.com/watch?v=kh6c0SOfkH4","qr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAIAAABqcO2fAAAEuUlEQVR42u3dQY6cSBCGUbfFFeYiI/n+B7A0F5mN197YB+gNCscfkeD31t0UBZ9SRSqBj18/f3yB9/rqECBxkDhIHCQOEgeJg8SROEgcJA4SB4mDxEHiSBwkDhIHiYPEQeIgcZA473d1beiff78tfo3///vesj+17Xz+r67j07XlO9s5/5waxUHiSBwkDhKHY1y5TXddEdeu9LvmELq+Rdd2uvawtp3dc2oUB4kjcZA4SByOcU1+WG6dRu2zPm+5tiYkt0Km9k279ue0c2oUB4kjcZA4SByOcb31i+XmRmqzAaetdZmc0zCKg8RB4iBxJA6vc/3NX/78WYXcXUhGcZA4SBwkDhKHPzA6ozI5G9B1N0ruDprTtnP+OTWKg8SROEgcJA7HCM6o7F7p37n2v7OHXXcGPfFvzj+nRnGQOBIHiYPEYUnbjMppaxW65k9q3rGdd9xhZBTHDxWQOEgcJA4BbTMqk0957Xp78uQ7err2Offm6K6zvNuGURw/VEDiIHGQOIx4wBqVyav42v7kvtfkuprcnUG7a12M4vihAhIHiYPEIWD0OSqT6xl25wcmZxVyzz/p2ufdORajOH6ogMRB4iBxCFi+6ye35TtzLHc+Kzc/cP52uuTel2QUB4kjcZA4SByWBO/6yT3xIzd7c9psQO7JKrljWDunuVUrRnH8UAGJg8RB4hBwTX5Y16xL7amzd+TmYSaP6uQenrbyxyiOHyogcZA4SBxGBO/6qV01f/6bybUutb/JzQ903fGUm7mqHbHJlT9GcfxQAYmDxEHiEPDx6+ePlg2d9saZO3t42jNdd+dhct/LKA4SB4mDxJE4vM7ojEru3TG12YCuFSBdRyM3y5Hbn925I6M4SByJg8RB4rAk+GTa2nX05MxMze47cc6fP5l8t7VRHCSOxEHiIHFYEnwybe4ZILm1JV1zCLXj03Wca7qOfK0EozhIHCSOxEHi8Chtd/3krv1zq19277vJ3YW0e1dU15aN4iBxkDgSB4nDwa7dj69doefmPbpmJ7q+xe7R6Dqnk59uFMcPFZA4SBwkDiOOW6Ny2ht7J/+rtp3JJ6J07eGdz/IcFZA4SByJg8ThYG1rVLquvnPPfa3tT207uf+6c+RzT0SpnXejOEgcJA4SR+LwOse96ycn996c3f/qustmcmXL5DyMURw/VEDiIHGQOASMrlG581+760bubCe33iM3w5M7X108mRYkDhJH4iBxeJTR56hMeuLdQ7u67vqZXA9jFAeJI3GQOEgcliyvUZmcDZicMch9+uSWJ++TMoqDxEHiSBwkDo8SfHty7j6OyXfQ5J4P07U/T7xzqnZOjeIgcSQOEgeJwzGuyQ87/4kouXclTz6Dd/Ls5M6XURwkDhJH4iBxONj193zV2vzJ5GqT3N/UvOP5MEZx/FABiYPEQeIQ8NoZldy1f25mJvdZp62i8fZkkDhIHCSOxOHhRmdUJq/Za2893v2mk09W2X22yWQJRnH8UAGJg8RB4hDQ9vbk0971s/v8k6539Ey+6+eJ+2MUB4kjcZA4SByWtM2ogFEcJA4SB4mDxJE4SBwkDhIHiYPEQeJIHCQOEgeJg8RB4iBxkDgSB4mDxGHJb2Wh4Jknj0bxAAAAAElFTkSuQmCC","backupUrl":"https://www.youtube.com/watch?v=5afPNugMan0"},{"day":12,"url":"https://www.youtube.com/watch?v=z09rvN3s9Kg","qr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAIAAABqcO2fAAAEsUlEQVR42u3dMW7cMBCG0TjQFXKRALn/AQLkImlcu3G6NEYAgpl/hpLfq+2VVvpAaAmJenl/e/0Cz/XVIUDiIHGQOEgcJA4SB4kjcZA4SBwkDhIHiYPEkThIHCQOEgeJg8RB4iBxnu+q+qBv338Mfo3fv35u7OHH/9r7m849rDo7e/tz2jk1ioPEkThIHCQOQ67cR1f9Is790q+aP8nNlnTu4TPOqVEcFyogcZA4SBxaXJ0by93dUbWtqrtEcve6VB353N0vuXNqFAeJI3GQOEgcjnE99YtVPdGTux9mZZ+rvvvK/nTOchjFQeIgcZA4Eoebe+yMysoMRucdKXfcQ6M4SBwkDhIHicM/tM6onPYrPvckTtXn7O1h1Rq8dzynRnFcqIDEQeIgcWgRnFGZfVPMym//3Nt/cn+z972eek6N4iBxJA4SB4nDkJf3t1dH4a/Z+ZMqn+eJHqM4SByJg8RB4jAkOKPS+b7g3JxG5/uCq1Zf2fsWuSM2u4qLURwXKiBxkDhIHALKZlRmZzA6Vw457WhUzbHkVsHd2x+jOEgcJI7EQeJwsLJ1VDpnJ3Jy67XmngPKzbrk2ujcH6M4LlRA4iBxkDgEtN6jkvvkzqdRTtvWis6VcvfO6co+G8VB4kgcJA4Sh2MMr0w7O6exInd/Re6ZmjuulJubvTGK40IFJA4SB4lDQPAelZzOe1Ryszezcz659Wqq/ssoDhIHiSNxkDgcrPUeldzap7nf9eevH1v1X3v7M1uCURwkjsRB4iBxGFK2Mu3570qevZdjxeyTOLN3GRnFQeIgcSQOEodbuTo3NnuHw+ycz8onV1n55KonnjrX6TWKg8SROEgcJA7HaH17cu7dxHu/9HP2tp67Yyd3Tle2bh0VkDhIHCSOxOFxgk/9VM0h7G1r9j3Is+/W6TyDVbMu7lEBiYPEkThIHG4luDJtbpWSva2fNseydzTOn006rQ2jOC5UQOIgcZA4BATfnpxbpWTP+e9cXjk+Vd9975x2bt0oDhIHiSNxkDgcLDijUvVb+7R1XzvvJDntXJy/daM4LlRA4iBxkDi0aF2Zdu/3eNWzJ1X3aeTe1Ly3PyvfdHbtl9k1ZIziuFABiYPEQeIQ0Pr25M7Va6v2p2pbnWubzM7eVG3LOiogcZA4EgeJw8Fan/rpXMU0918rPvNdIp3v0TaKg8SROEgcJA5Dgu/6mZV7K81pMwYrW1+ROz6zq8oYxXGhAhIHiYPEIaDsqZ/OlTFWfo93rl5b9TTTyveqOj4rW7/jbJJRHBcqIHGQOEgcWgTXUTntXTa5b5F75ii3Tm/uDHrqB1yogMRB4iBxPoEbrEzbufpK1ffqnGOZPTt7R6PzrhWjOC5UQOIgcZA4BFxP/WJVd4DszRis7M/KJ5//OXtHfm9/jOIgcSQOEgeJwzEuh+D/db43Z/adSrnvZRQHiYPEkThIHG6ldUZl9n03nfMMnfe6VK2Lm1uhxcq0IHGQOEgcicPjlL09+bR3/VR9i9PeufyMJ3FyR94ojgsVkDhIHCQOLcpmVMAoDhIHiYPEQeJIHCQOEgeJg8RB4iBxJA4SB4mDxEHiIHGQOEgciYPEQeIw5A/gPv03NMHSUQAAAABJRU5ErkJggg=="},{"day":13,"url":"https://www.youtube.com/watch?v=qcnnI6HD6DU","qr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAIAAABqcO2fAAAEt0lEQVR42u3dTWrbUBSAUadoC91IoftfQKAb6SRjT9xpwQTE5f7JPmecyJb88ZAeT9LH4/51g9f1wyFA4iBxkDhIHCQOEgeJI3GQOEgcJA4SB4mDxJE4SBwkDhIHiYPEQeIgcV7fkbWhn79+D+7G3z+fbXvx/FnP/xX7PlnHMOsbvsZvahTHiQpIHCQOEocCR92ms66I6670t81gxLbc+Vvs/02N4jhRAYmDxEHi0OLo/LDO2YC62ZLOzzozM/P8N7H/6jzOdTMzRnGcqIDEQeIgcWhxvM+u1l3F191zNLuyxSgOEgeJg8RB4vCNwyH4X2x1R5bYepi69SdGcZA4SBwkDhKHb7TOqGy7rq+beci6V6jz3pys9TBGcZA4SBwkDhLnDRTOqLzGnSZZq1ay1pbE5liyVtpc8Tc1iuNEBSQOEgeJQ4G0GZV3vq+k7hjG5mrO/E1sHsYoDhIHiYPEQeJwu91ut4/H/StlQ1d8Akmd2SeiZN3jM/t7GcVB4iBxJA4Sh8Uu+WTabW80PmN2tUnnb5F1fLL2yyiOExWQOEgcJA4F0taoxOYH6p6zekWdb2Ge/Zu6fTeK40QFJA4SB4lDi3UzKln3uWTN1dS9m7huFU3d8ZndC6M4SByJg8RB4rBG63NUYv8Vu2afXe+R9Q1nV+N0vo3IKA4SB4kjcZA4XErhjErsCv3Mf81+n9h26vZ9dlVP1m+R9bsbxXGiAhIHiYPEocUF1qjE/utVZwyuuB5m9tcxiuNEBSQOEgeJQ4G0d/3UvSu5873M+98X3PlO6thePH+f2fuAjOI4UQGJg8RB4lBgeI3Kme1kXeln7VfM7B1PWZ8++52N4iBxJA4SB4nDGq0zKp1v/6m7iq/bi85nv2Sp+z5mVEDiIHEkDhKHxS5w10/nzExsjqVuFmj/ypbOZ/AaxUHiSBwkDhKHNY7Zj4/NRWx7lsiZT4/tV0xsBqPz043iIHGQOEgcicPFpd31c+bKuvM9yFlX+nVvWM46YrPPfd32PBajOE5UQOIgcZA4tBh+jsrsE2U7n5pyRue8UN2Wt80LGcVxogISB4mDxKHA8F0/nc+GjX1659qS2JZjMyF1q0S2rasxiuNEBSQOEgeJQ4GXXaOybS/qZl2edb63uo41KiBxkDgSB4nDYuvWqJy5sq5budF5pZ/1XqHYlrcdn7rvYxTHiQpIHCQOEocChW9PzrrWztpO3f0ys0+C7bxPKrbl2dUvRnGcqIDEQeIgcSiQNqMye9U8+y7g/ethsvZ9dk7MKA4SR+IgcZA4rFF418/se3w6nzqbde9S1kqSzncPxX6d2HE2ioPEkThIHCQOa7Q+R6Xzur7u+5z5hmdmSzrnK7Lmc+qOj3f9gMRB4kgcJA6Xcrzzznde6de9zTnr/USzbyOyRgUkDhJH4iBxuJQ3mlHZ/3TWrBmMzr/Z/2QVozhOVEDiIHGQOBRonVHpfB5pbHZi/4qLuqe4ZB3DbSUYxXGiAhIHiYPEocDH4/6VsqFt7/qpu9LfP+tS9w3rjpg1KiBxkDgSB4nDpaTNqIBRHCQOEgeJg8SROEgcJA4SB4mDxEHiSBwkDhIHiYPEQeIgcZA4EgeJg8RhyD/lvuN5gcIr5AAAAABJRU5ErkJggg=="},{"day":14,"url":"https://vimeo.com/14190306","qr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAIAAAAG+WgKAAADBklEQVR42u3dO04DMRRAUYLYAhtBYv8LQGIjNKnTQEkxjWW9j2Of0yeE0ZWtJ2cyt9/H/QXivLoESApJISmQFJJCUiApJIWkQFJICkkhKZAUkkJSICkkhaRAUkgKScG/t6g3ev/4bPw3fr6/Qj7P9X2i/veRd17tGlqlsPEhKZAUksLElz1BRE1Yc/PU9VXXd56b5kZe1XsNrVLY+JAUSApJYeLLnjLypp7eCXTXa2iVQlJICkmBpDhz4uudwkZO/eZelXfGZ5UCSSEpJIWkwMQ3NwNe5X0X1CoFkkJSSAokxd4T3zN+PzPvZHDXa2iVQlJICkmBpDhh4lvtnGvu+5mV09z619AqhaSQFEgKSXHmxLfr+V3l9dnjzj6rFJJCUkgKJMV+E1/UL5PkzWVzM1feMx16p8u8X5KxSmHjQ1JICiTFMm6/j3vSxDc3T1Wec+V95rznNax/na1SSApJISmQFMtofgJ73r11I7NS1KRW+aq5qdDz+LDxgaSQFJLCxLeCyhkw6q/nfYsy6lXO+LDxgaSQFJLiSGHf6hwRNb9UTpdRU+Hc/1V5fdzHh40PSYGkkBQmvvppzjc2M66zMz5sfEgKJIWkOEDp0xmi5rK8+WX9X5LJm5qtUtj4kBRICkmxneZvdeZNl1HTXOVdhFHTXO8MaJVCUkgKSYGk2G/i2/WutMpJNo8zPmx8ICkkhaQw8e2k90nuc5+n8n2sUtj4kBRICklxgLD7+HrPufKmnt6zwtWmOasUkkJSICkkxZkTX+WslPcMhbzfTsm7Yp7OgI0PJIWkkBTUT3xRs0neHJR3pjYyS1aeirqPDxsfSApJISlMfDupPOOLep+o2W1uunTGh40PSYGkkBQmvr1nwKiZa/2nz3s6AzY+JAWSQlKY+LJnrkqV51wjE1besyp6f0XHKoWkkBSSAklxwsTXO3dU/vW8uewZ72G0SmHjQ1JICiTFMrZ9Hh9WKSQFkkJSSApJuQRICkkhKZAUkkJSICkkhaRAUkgKSSEpkBSSQlIgKRbwB83rh34xOqtDAAAAAElFTkSuQmCC","backupUrl":"https://www.youtube.com/watch?v=VF9-sEbqDvU"},{"day":15,"url":"https://www.youtube.com/watch?v=Mh4f9AYRCZY","qr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAIAAABqcO2fAAAEpUlEQVR42u3dTWrjMBiA4aT4CnORgd7/AIVeZDZZZ5M5QCkI8f3ZeZ5108TJi7CFLN9fz8cNruvDV4DEQeIgcZA4SBwkDhJH4iBxkDhIHCQOEgeJI3GQOEgcJA4SB4mDxEHiXN8R9Y/+/P1sPIx/318bnyfvVT//pvI7jPqE035TozhIHImDxEHiMMaR96+jroijrvTzZkKijmL+u0/7TY3iIHEkDhIHiUOTo/LNomZC9l61MoeQd12/9+5RMxjzZ7eM4iBxkDgSB4nDqRxXPbBp61gq5zSi7mYyioPEQeIgcZA4/OKyMyp560+i9iQ54x00RnGQOEgcJA4Sh9vtVjyjcsZVEHk7uObNe1zjfiKjOEgcJI7EQeIwWOKMSu9Kiah9S6J2cI26N6f3uM64+sUojhMVkDhIHCQOCe6v5+OSB1a5AmT+u097zpFRHCQOEgeJI3E4ubA1Knn7o1Y+TWbayo28+ZPKb6N3p1yjOE5UQOIgcZA4JBi3M23UtXblPMPKJ5z2Xr0zTpXPrTaK40QFJA4SB4lDgtJ9VCpXrVQ+4zjqVXvfWO8Ot5XzS0ZxkDgSB4mDxGGM0n1Uoq6+o9ZX7Mm7D8gOLUZxkDhIHImDxOEkmnem7V2jkvfcnBXzn62Td2eQfVTAiQpIHCSOxOHkxq1R2buyrrxCr3yvlXfv3cmkdydhozhIHImDxEHi0KR5H5WVV1X+5169O6LszY3MfwqzURwnKiBxkDhIHBIkrlGZ9tSeaWs5er/n3l1lKmddjOI4UQGJg8RB4pAgcY1K3t06Uc/E+fmqymf97MmbCendN9goDhIHiSNxkDicStgalco9UqLmWCrvFeqdZ+jdfaV3HsYojhMVkDhIHCQOCY7et99bNxI1y9F7v8zet7H3maPW3kz7xoziIHEkDhIHiUOTxDUq859fvDcbEPVM4b3PE/Vb5B3XtGczGcVxogISB4mDxCFB2BqVylUQedfjlasp5u/pumfaOhajOE5UQOIgcZA4JChdo5K3jiXquj5qxmBP3r4u0/bOrdxZxSiOExWQOEgcJA4JEp+enHetvaJ3D9XKXXB7dzvJu0vLjApIHCSOxEHiMFjizrSVcxG9nzlP5d0xletG3PUDEgeJg8SROJxc2IxK5aqMyr1qK2cMKuc0or75laMwioPEQeIgcSQOl1N610+lvKcIzb8vae9VebvKVM4UGcVxogISB4mDxKFE4hqVSlHrYSr3AOm9f2fvN105LmtUQOIgcZA4SJw3kLiPSt6VdeXzbuavwZj2nz3rB5yogMRB4iBx3sBR+WaVMyGVu+BW3hmU9z1HrZlZOfbKFU1GcZyogMRB4iBxSHBc9cAq91CdP+dT+Xmm7RtsFMeJCkgcJA4ShwTHOx98744oKzMPlXMReWtU9v7GKA4SB4kjcZA4DFY6o1J5HZ23O2vUka7cC7M3O1H5HJ+8WSn7qIDEQeJIHCQOgyXOqPQ+/WfaHil561ii/mZF1LGvrMYxioPEQeJIHCQOg91fz4dvAaM4SBwkDhIHiYPEQeJIHCQOEgeJg8RB4iBxJA4SB4mDxEHiIHGQOEgcicOZ/QdN4egJui6joAAAAABJRU5ErkJggg=="},{"day":16,"url":"https://www.youtube.com/watch?v=rz5TGN7eUcM","qr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAIAAABqcO2fAAAE1UlEQVR42u3dwW3bQBCG0ThgC2kkQPovIEAaycVnX5wCBAOLzfwzS+m9s2yS0geCXCyXb58f79/geX33FSBxkDhIHCQOEgeJg8SROEgcJA4SB4mDxEHiSBwkDhIHiYPEQeIgcZA4z++q+kc/fv4aPIy/f35v7OHjX60cxcpfrexP7jus2sPzf1NncZA4EgeJg8RhyJX711V3xFV3+rn9yY2x7I355I79tN/UWRwkjsRB4iBxGHJ1bqxzNGBvtsneZ2bnljx+Zu+vOufV5EZmnMVxoQISB4mDxKHF5Sv4/zv9qvGB02a2OIuDxEHiIHGQOHzhhUZUcqum5PbwUef8E2dxkDhIHCQOEocvtI6ovM59fdWzQp3P5szOz3EWB4mDxJE4SBxuJTiicscnTapWMln5Nqq2tbcazN6vc8ff1FkcFyogcZA4SBwCykZUnnX+SedxVY3VrHymalVeZ3GQOEgcJA4S5yWVjahUzeXY87it3OhE1R7mRjmqjmJ2xRhncZA4SByJg8ThYMfNUakaeaga4el8XqZzZZXc7151pFXH5SyOCxWQOEgcJA4BwTkqe/fjuW11Hlfnt7H3n6vGNHIjV87iIHGQOBIHicPB3j4/3kv+UdUYQtW8kdnP5L6xlW9jZVuzM3Y63/jsLI4LFZA4SBwkDgGtIypV98id8yuq9qdqDztV7eHsc0nO4rhQAYmDxEHiEBAcUakanZgdeeic67Ky9dw31vm0jnVUwIUKSBwkjsTh5oZHVDr/Kuf8NWQ6R6VO+wWdxXGhAhIHiYPEISD4rp/ZtU9PW/O2811IOVVv9vH2ZJA4SBwkjsTh5lrnqFQ9abJyp18lN3Nj9pma3D7vHYWVaUHiIHEkDhKHWxkeUdm7iz9t7Y7ZlVVOW7228+khZ3GQOBIHiYPEYUjZiMqK2edT9vbwtHkap40LrWx99n1AzuK4UAGJg8RB4hBw5f717Doqe/+n89t43Pppb5fObd1ZHCQOEgeJI3G4uatzY1VvnMmNsVQdV+4dRrltdR7742esowISB4kjcZA43EpwHZW9+/EqVfvTubZJbiSkc23Y2dVynMVxoQISB4mDxKFFcI5Kbs3SqidoVmZK5EYDOmfj5OxtvfMJLGdxXKiAxEHiIHEIaH3XT+ed9WlvCOp8Nmf2/Tve9QMuVEDiIHGQOC/gOm2HcrMy9sZGOp9LWtlW51q+e9/his6ZNs7iuFABiYPEQeIQ0Pr25E6zbyJe2Z+VbZ22ikvue859887iuFABiYPEQeIQUDZHZXY1j725JXvvoJk9rk65Z7I6j8tZHBcqIHGQOEgcAlpXps3d6e99ZmWfc+vDVK2Lu3cUuV/wtLVqncVxoQISB4mDxCGgdR2V096w3Lm6SOdKuXtHmpuN0/muZGdxXKiAxEHiIHFocb3Ooe7ds1fNCama2bK3rarPrOzz3nGZowISB4kjcZA43MoLjahUrfK6N7Ml9xbm2c9U7bM5KiBxkDgSB4nDrbSOqHSuR5q705+dcZF7Y1FujoqzOEgcJA4SR+LwdIIjKrP32p1bn12LtXONlKpRF+uogMRB4iBxJA439/b58e5bwFkcJA4SB4mDxEHiIHEkDhIHiYPEQeIgcZA4EgeJg8RB4iBxkDhIHCSOxOHO/gGdh+sJrYtY3AAAAABJRU5ErkJggg=="},{"day":17,"url":"https://www.youtube.com/watch?v=93hq0YU3Gqk","qr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAIAAABqcO2fAAAEsElEQVR42u3dTWrbUBSA0bpoC91IoftfQKEb6cRjT9JpIISKy/2Tcs44kW354yE/np4eb6/nN7iv704BEgeJg8RB4iBxkDhIHImDxEHiIHGQOEgcJI7EQeIgcZA4SBwkDhIHiXN/R9aBfvz8Nfgx/v75/d/3k/U3Z1496/xkHfnMcfZ/p0ZxkDgSB4mDxGGNo+7QWb+IY7/0Y3MjZ+ZYZs9G1juMHWf2OzWKg8SROEgcJA5rHJ0vVrdO48xrdc5pbPukdfMVnZ/UKA4SR+IgcZA4rHHc9YPF7pepW6exba1L55yGURwkDhIHiSNxuJ3DKXivbk+SrPfzdWZCjOIgcZA4EgeJw2KtMyqzcxGxd/jxOFl30Gw7zv7v1CgOEkfiIHGQOKxROKMy+0v/zG//ulmXe/zN/u/UKA4SR+IgcZA4DHm8vZ5f5KPOPr/4zJG3HccoDhIHiYPEQeLwibQ1KnXrIs68Vmx+IGv32qxZl87j1H3Ls20YxXGhAhIHiYPEocW6nWk7Zx5iaznq9j+JrTbJej91dwZ1Ps3ZKI4LFZA4SBwkDi0uuTNtbN1IbK6mblah86zO7n8y++pGcVyogMRB4iBxKNC6j0rnTiad8wyd+8dmvZ9tx6mbcTKK40IFJA4SB4lDgXV3/WStLflodpYj62yc+VxZZ3V2/xOjOEgcJI7EQeKw2PAalc7da+vmRureYafOJwR17q9rFMeFCkgcJA4ShwKFz/q54q/vM0fOWt0R++x1dxh1zgt1rvwxiuNCBSQOEgeJQ4G0NSrb9iSJvVbW55pdtVJ3H1DdPVlGcZA4SByJg8ThUob3Uclaz1D3N7H33PkM6Nhqk9j5qXvis51pQeIgcSQOEodLSZtRyZofyJqLqPuFXnd/St2zm2OvNXtW7aMCEgeJI3GQOCzWujNt7Hf0tvmBzmf9ZH3S/cfJ+naM4rhQAYmDxEHi0KLwrp97rOXI+qXfeadS1lqg2Jmv+76M4iBxJA4SB4nDGpd8evK2uZrZVSvbPvvsPrRGcVyogMRB4iBxaFE4ozK7AqTzyGdeq+44s08+qtsF110/IHGQOBIHicNiaXf9bJt5mP0Us++5866o/etzjOK4UAGJg8RB4lCg9Vk/sdmALLOvVfdf+5/4PHuflFEcFyogcZA4SBwKtK5R2XZHzxlnZgOy5mrqdtPNmsGo+y7sTAsSB4kjcZA4XMrw05PrbNtvZL/OVUads2RGcVyogMRB4iBxKDC8j0rnbMDsXiJX3HG385nURnGQOEgciYPE4VKOukPP7lKSNccSW9lSN8Oz7ek/Wcepm4cxiuNCBSQOEgeJQ4Gj88W2Pcen7v6Uzl1wZ7+duu/LKA4SB4kjcZA4LHY4Be9lrT/Z9jcxs8/oMYqDxEHiSBwkDovddkalbsVF7C6bun1fs+5d2vYsaaM4SBwkjsRB4rBY64xK5/0gsacez37Sup1V6l592/duFMeFCkgcJA4ShxaFMyqzKxOy9j+JzQ/EjpP1fur2xe38vjw9GSQOEkfiIHFY7PH2ejoLGMVB4iBxkDhIHCQOEkfiIHGQOEgcJA4SB4kjcZA4SBwkDhIHiYPEQeJIHK7sH+XH1fFk0q1vAAAAAElFTkSuQmCC"},{"day":18,"url":"https://www.youtube.com/watch?v=J---aiyznGQ","qr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAIAAABqcO2fAAAE0klEQVR42u3dQYobMRRFUTvUFrKRQPa/gEA2konHnnQWYBqE+O9Lss8Zd9uu8kW4hEp1/3o+bvC+fjgFSBwkDhIHiYPEQeIgcSQOEgeJg8RB4iBxkDgSB4mDxEHiIHGQOEgcJM77u6pe6Oev3wsP49/fP21H8fper/8193mqzmHVJ3yP79Qojh8qIHGQOEgcAq7cS1ddEe92pT9ypFVzLCOv3PldnPidGsXxQwUkDhIHiUPA1flmnbMBI3MacytScrMBczMzr38z91+d62pyMzNGcfxQAYmDxEHi0OL6nEOtmkPIzQ/strLFKA4SB4mDxEHi8I0PmlHp3Gsl9wk7158YxUHiIHGQOEgcvtE6o7LbdX3VnUFzRzryyp335lSthzGKg8RB4iBxkDgfIDij8q53mszNulStLZmbY6maKTrxOzWK44cKSBwkDhKHgLIZlU++ryR3Dufmakb+Zm4exigOEgeJg8RB4nC73W63+9fzUfJCuTtoRnQ+kSf3eapWpOz2DKO5dzeKg8RB4kgcJA4bO3Jn2tx8xch75e6X6dxZJfddVJ2fquMyiuOHCkgcJA4Sh4DFMyq5+1zmrtlf/6Zzv5Hc3EjnfixVM1dGcZA4SByJg8RhYwesUalakTLyXyPvnnv+TtU8TOeet3NnteobNIqDxJE4SBwkDosEd6bNXSPn1rHk1mCMvFfnke62q4xRHCQOEkfiIHE4StmMSufOtJ27s1Ydae5emNz6nJFX7rxvyygOEkfiIHGQOGyj9Vk/VTpXv+SeidN5T83+TwiyjwpIHCSOxEHicJSyGZWRK+vcmpCcznU1uU+49knWa79Bozh+qIDEQeIgcQhYfNdP7p6RzhUgVWds7ig6767qXCFjZ1qQOEgciYPEYWPBNSojV81zV/Fr7/GZe53cziqds0BVn8caFZA4SBwkjsThcK37qOSevzN3zb7/66ydr9jt+zKKg8SROEgcJA7buNa+fec6jaq1HFVPKx55bk7uE67d18UoDhIHiYPEkTgcrnVGpfNunaqZmaqn/1T9V+6uqLWrjOyjAhIHiSNxkDgcpXVG5cS9WEeOYrc7jOY+YdVczW67wRjF8UMFJA4SB4lDwJusUZl7r/1nHnLrRqrORuf3ZRQHiSNxkDhIHLax3c60uz3Hp+qVc7MuI+ew846e3FEYxUHiSBwkDhKHbVy7faCqJxHnruvXzsx0PjOo6ihy345RHCSOxEHiIHFYpGxGpWo2oOq93tXaXVzmXnnt03+M4vihAhIHiYPEIaBsRmXtVXPVSpKRZ9CMvHvnTrk5uTunOo/LKI4fKiBxkDhIHAKCd/3krppz6yLm5kZyT2qeO6ude6RUnXlPTwaJg8SROEgcjrLd05OrrutHXmdkTiO31qVzvqJqPid35j3rByQOEkfiIHE4yvXJB3/i05yrnuOz236/1qiAxEHiSBwkDkf5oBmVqntzcmtLqmYwOv+mauWPNSogcZA4EgeJw1FaZ1Q69yPNPQEnt95j7rg6987N7cFrFAeJg8SROEgcjhKcUVl7rd357mv3Ys3tedu5G4w1KiBxkDgSB4nDUe5fz4ezgFEcJA4SB4mDxEHiIHEkDhIHiYPEQeIgcZA4EgeJg8RB4iBxkDhIHCSOxOFk/wEW0dDVQhINDAAAAABJRU5ErkJggg=="},{"day":19,"url":"https://www.youtube.com/watch?v=qnydFmqHuVo","qr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAIAAABqcO2fAAAEw0lEQVR42u3dTYrbQBCA0TjoCrlIIPc/QCAXycZrbyYHMIGmqKqult9bj8f6+RBW02o9vl7Pb3Bf3x0CJA4SB4mDxEHiIHGQOBIHiYPEQeIgcZA4SByJg8RB4iBxkDhIHCQOEuf+rqx/9OPnr4278ffP78AWvn9qZS9WPrWyPXXHMGsL559TV3GQOBIHiYPEYZOr7l9n3RFPu9Nf2dOsMZbYmE/duTjxnLqK44cKSBwkDhKHAlfnl3WOBqx8V2xGSt1oQGxk5v1vYp/qnFdTNzLjKo4fKiBxkDhIHFpcn7OrnTNJYqbNbHEVB4mDxEHiIHH4j+uTd37aWiJ1q8F0zglxFQeJg8RB4iBxPkDriMq0+/q60ZKssZrOZ3P2zs9xFQeJg8SROEgcjlI4onLikyZZK5msHI2s71oZ08h6DujEc+oqjh8qIHGQOEgcCqSNqNzjuZK9z8tkjdVk7dc9zqmrOH6ogMRB4iBxKJA2opI1lyPm/bti3163zXWzTVbORdY5rTtfruIgcZA4EgeJw1GOnKNSN6pQNy60d7ZJ57moO/Ku4iBxJA4SB4nDGI+v1zPlH3WuExK7Z5//TuHOtzDXrXmbNTvIVRwkDhJH4iBxGOyAtyfvXa+1cywia6Ro2n65ioPEQeIgcSQOt5M2R2XlzrpzDZB38+fMdB6Nzi3c+1ySqzh+qIDEQeIgcShQuDJt53191hZOe3YpNqZR96mVLcxaMcY6KiBxkDgSB4nDYK3rqGSpmxMS26+925P1XZ2jHJ21uIrjhwpIHCQOEocCrU/9ZN3pd873yDJ/fKnz7dLengwSB4mDxJE4HG7cHJWsMY3OZ4Vi21M3J2TvNsf2wtuTQeIgcSQOEoejFM5R6bzTz9qeuqdj6mbaTFu9dtpZdhXHDxWQOEgcJA4Fxr09eeUOPWt2x963MGcdjdi+r6hby7dum13F8UMFJA4SB4lDi80jKlljEVn3/rFtXrHy7Z0jIVkjRbFvdxUHiYPEQeJIHA63eR2Vuk/Vjcy8q/v2zk/F9ivr+Kx8ylUcJI7EQeIgcRijcESl7h45awvnr0kSO86x79p7Bq1MCxIHiSNxkDgcpfCpn7u+LzhrNGDvKiXTVsG1jgpIHCSOxEHicJQjn/qp0/k80bSnkOrGl2LMUQGJg8SROEgcBhv3rp+sMY35symy3iuUdQxj25x1fOrOl6s4fqiAxEHiIHEokDai0vnenM43Ea/c+3fOq+lchza2PbG/cRUHiYPEkThIHI6SNqIybU3XveMn0558yTqnWdvTuV+u4vihAhIHiYPEocBtV6atW4Fk73+OPRmUtc1ZZ2flU9ZRAYmDxJE4SBwGa11HpfO+Pvafs+7rV0ZLOscr6kaK9h5nV3GQOBIHiYPEYZPrc3Y1NnNj71tyYk8z1f3NyjZnHUNzVEDiIHEkDhKHwT5oRGXvDJnOdxN3/s3edXFdxUHiSBwkDhKHTVpHVDrXI+0cneiccTHtPdF7VyR2FQeJI3GQOEgcNikcUdl7r103IyVrBZKsUZfOMZasJ4OsowISB4mDxJE4HO7x9Xo6CriKg8RB4iBxkDhIHCSOxEHiIHGQOEgcJA4SR+IgcZA4SBwkDhIHiYPEkTic7B+eP9wjJN2YywAAAABJRU5ErkJggg=="},{"day":20,"url":"https://www.youtube.com/watch?v=EwTZ2xpQwpA","qr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAIAAABqcO2fAAAEu0lEQVR42u3dQWobQRCGUTvoCrlIIPc/QCAXycZrb5wDCMNQ1F9dkt5bJ5JH+mhGTXfP+9fnxxs8rx8+AiQOEgeJg8RB4iBxkDgSB4mDxEHiIHGQOEgciYPEQeIgcZA4SBwkDhLn+d26Xujnr98HL+Pf3z9jV3H/Xvf/q/b3dH2GXX/hc3ynRnHcqIDEQeIgcQi45V666xdx7pf+thmM2itPfhf7v1OjOG5UQOIgcZA4jLhNvtnkbMCVOY1tazlqf8/9v6n9r8l1NbmZGaM4blRA4iBxkDiMuL3OpeZ29OT2HJ1d2WIUB4mDxEHiIHH4xgvNqNRWd9zLzU7U1sPk1p8YxUHiIHGQOEgcvjE6o7L/d/3kuSW12Zvc3pyu9TBGcZA4SBwkDhLnBQRnVJ51p0lt1qVrbUltjqVrpugRv1OjOG5UQOIgcZA4BLTNqLzyvpLcZ9i1C6lrHsYoDhIHiYPEQeLw9vbWOKNSW1/RpfYcn64rrf2FuVmObU+Xrl2FURwkDhJH4iBxWOwh16jkTnDNzQudXW0y+V10XWnXdRnFcaMCEgeJg8Qh4P3r86PlhSafQdO1dmLbU4Ynn8Kc+y5qn2puXsgojhsVkDhIHCQOAcE1Krm9J5PPC56ci+jaT3T2ecrbTq81iuNGBSQOEgeJQ0BwjcqV3/5XXic3V3P275k8EWXy87nyOpMzPEZx3KiAxEHiIHEIOLzrZ/J3fe29cjMGk3NQtU9s254sozhIHImDxEHisMbojEqX3D6grvmT3IzBtlmprtkka1RA4iBxJA4Sh4dy+ByV3BqMs9dVu9LJv2fyCctnv0GjOG5UQOIgcZA4BLTNqHTtc+n6hZ57bk7uE7t35Somz5mZ/DTs+gGJg8SROEgcFlt3jsrkDpGzO4Nyn8+kbc9KNorjRgUkDhIHicOIthmVKx7xlJLJU14nz7Pd9g06RwUkDhJH4iBxeCjBXT9XTJ4o2/W/alexbadSbi3Q2TUzRnHcqIDEQeIgcRgR3PWT+xX/iM/6mXwO8tl1NZOfmFEcJI7EQeIgcTjk8DkqZ2cMukzuVDr7ymfPmTGKg8SROEgcJA5r3M6+fW0vTG6HUdfrdM08dJ2sUnv33Nm5k89TNorjRgUkDhIHiUPA6BqVSfufELR/RUrtvXKvbBQHiSNxkDhIHNZYt0al9pt9clfL2ZmZ3OxN7husfadGcZA4SByJg8RhsdGnJ0/a9iTis7tsrsg9b3ry7zGK40YFJA4SB4nDiMNPT+5SO32l68SP3LU/686pyesyiuNGBSQOEgeJQ0Bw18/ZnSZdzx7K7Uu6MntT+1S3rVqp/S9rVEDiIHEkDhKHxUbPUTm7+2NyjiU3Y5A7t2RypY1n/YDEQeIgcSQOD+72Opd69pyQrhNlu2aBcuf9dq2isUYFJA4SR+IgcVjshWZUJs+hzb17bcdT7t/sP1nFKI4bFZA4SBwkDgGjMyqT55FOzk5MrrjInZGSW6MyucfHKI4bFZA4SBwkDiPanp687Vk/uTNbzs5gbPsuJncYGcVB4kgcJA4ShzXaZlTAKA4SB4mDxEHiSBwkDhIHiYPEQeIgcSQOEgeJg8RB4iBxkDhIHImDxEHicMh/6ZEF/sOxrGQAAAAASUVORK5CYII="},{"day":21,"url":"https://www.youtube.com/watch?v=MtN1YnoL46Q","qr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAIAAABqcO2fAAAEu0lEQVR42u3dTY7TMBiAYQblClwEifsfAImLsJl1N+UA1SDL+v6cPs8aJk3zykotx/l4Pj6/wX199xUgcZA4SBwkDhIHiYPEkThIHCQOEgeJg8RB4kgcJA4SB4mDxEHiIHGQOPd3Rf2hHz9/NZ7G3z+/Nz7h6/9aOYuV/7XyefK+w6hPOP+aGsVB4kgcJA4ShyZX3p+O+kU87Zf+yplGzbHszfnkXYsTr6lRHDcqIHGQOEgcElyVB6ucDVg51t6KlLzZgL2Zmdd/s/e/KtfV5M3MGMVxowISB4mDxKHE9T6nWrmSZM+0lS1GcZA4SBwkDhKHL1zvfPLT9hLJ2w2mck2IURwkDhIHiYPEeQOlMyrTftfnzTxEzdVUPpvTuz7HKA4SB4kjcZA4HCVxRuWuT5rsPVMTtbZkb44l6jmgE6+pURw3KiBxkDhIHBKEzajc47mS3udlouZqos7rHtfUKI4bFZA4SBwkDgnCZlT21ldEeT3W3tHzPnPeapOVaxF1TfOul1EcJA4SR+IgcTjKkTvT5u3gmjcv1LvapPJaVL632igOEkfiIHGQODT5eD4+yw6Wt5dI5WxAnsq3MO+dad71ypsXMorjRgUkDhIHiUOCcTvT5u3XWvl59r6fqE/YO081bfdaozhuVEDiIHGQOCQIW6OyN8/Qu7fJ3rHy5mr2vp88lbNSe9+PURwkjsRB4iBxaJI4o1L5S3/vE97jWZiouay8Z44qr7JRHDcqIHGQOEgcSpSuUcl7Xibq93jlmpm8T7h3rN7daeyjAhIHiSNxkDgcJXFn2so1GL1zLCvyZgx6Z4EqZ5OM4iBxJA4SB4nDGGE700bNe5z4BuGob+zVynlNexdS1HX31A9IHCSOxEHiMFjzUz97v8d7nxXKO4tp+/SumPaMj1EcNyogcZA4SBxKJD7186r3TTHT3ua88v3c4/km+6iAGxWQOEgcicPtNM+o5M0zzH9384n7ulS+t9ooDhIHiSNxkDgMVvrUT+X/qnxX8vxvI0rvKiOjOEgciYPEQeIwxpX3p/P2P4nar3VvvqJyPcze35n/CSt3gzGK40YFJA4SB4lDgsQZlag1Br07olSuLdn7y3vfRt4qkWnraoziuFEBiYPEQeKQ4Ko8WOUeIL271658nso3Fu3NzFQ+4+PtySBxkDgSB4nDUa5pH6h3VcbK/EDlme59nrzvMO+8PPUDEgeJI3GQOBwlbEYlajYg6liVMzN5sy5RR69853Ll7I1RHCSOxEHiIHFoEjaj0vureWX/k7z5kxPfKRx17vPPyyiOGxWQOEgcJA4JDtiZduWXft5swLR9S6Lec5R3Baet/DGK40YFJA4SB4lDggN2pu2dmYk6euUMz8pZRO1DG3V07/oBiYPEkThIHI5y+Qr+L+qpn6i9X6LWw0TNcvQe3SgOEkfiIHGQODR5oxmV3p1e8mZdev9N7xNGRnGQOBIHiYPEoUnpjErlfqR5b8DpXXGRN4Mx7a3HRnGQOEgciYPEYbDEGZX5a0JenbgX6/xnfPLO3SgOEkfiIHGQODT5eD4+fQsYxUHiIHGQOEgcJA4SR+IgcZA4SBwkDhIHiSNxkDhIHCQOEgeJg8RB4kgcTvYPHfLtj9WeVGQAAAAASUVORK5CYII="},{"day":22,"url":"https://www.youtube.com/watch?v=CMNry4PE93Y","qr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAIAAABqcO2fAAAEzUlEQVR42u3dwY3bMBBAUTtwC2kkQPovIEAaycVnXzYFGAGYwcxwKL933rUt+0OQCJK6f72eN7iub74CJA4SB4mDxEHiIHGQOBIHiYPEQeIgcZA4SByJg8RB4iBxkDhIHCQOEuf6Hlkv9P3Hz42H8ef3r8AnfP+vlaNY+a+Vz1P3HWZ9wvm/qbM4SByJg8RB4rDJo+6ls+6Is+70Y+MnWa8c+zayPnPWbzHtN3UWB4kjcZA4SBw2eXS+WedoQN2YRt1oQGxk5v1vYv/VOa+mbmTGWRwXKiBxkDhIHFo8Pvngp83cmDazxVkcJA4SB4mDxOEfPnpEZdruInW7wXTOCXEWB4mDxEHiIHE+QOuIyon39XWrWlZeuXNtTt2qKGdxkDhIHCSOxOFyCkdUrrrSJLamJmtuSWyMJWsd0Im/qbM4LlRA4iBxkDgUSBtRueq6ks7jyhqrWfmb2DiMszhIHCQOEgeJw+12SxxRic2vyPL+XnWjE1mfsG6UI+so9u4Y4ywOEgeJI3GQOAx25ByVuh1cV96rbr1M584qdb/FtJVBzuK4UAGJg8RB4lCgdY5K7H587z17534jdWMjse+5buSqc1zIWRwXKiBxkDhIHAoc+fTkuj1dO59NvDLOEPs29j5POWsMKusTOovjQgUkDhIHiUOB+9fredyHzpqj0rl6KOvdO2WNFO1dl+QsjgsVkDhIHCQOBdJGVK4x8lA3xpK1i0vs82T9V2cJ5qiAxEHiSBwkDoNtHlGZNgsia3RiRdaxZ71X1itP20PGWRwXKiBxkDhIHAoUrvqpu0PvnO+RZe++JdPmC3l6MkgcJA4SR+JwuNZn/WSNjUy7Z8/6xmJHEXu2zorO503bmRYkDhJH4iBxOErrzrRZ9+N162Xq5mDUzbSZtnutOSrgQgUkDhIHifMBWueo1L1X7J59/k4vneMVsTGfuv9yFgeJg8SROEgcBnvsffusMY3YPI3OtTArx1W3v+7KUWTZO2fGWRwXKiBxkDhIHFq07ky79/m883emnfYc5NhvsXLsnp4MLlRA4iBxJA6HK3x6cuzOunPuROfqmBV7n9Tc+Wymul/HWRwXKiBxkDhIHFoUrvrZu8ds1ufZOx+mbvQm9o1l/Zd9VEDiIHGQOBKHwxXOUZn//OLYcb3rXNGzYtrzgGLMUQGJg8SROEgcBmvdmXb++EDdbrEr30bs+USxV+4cY9m7g42zOC5UQOIgcZA4FCjcmXavrDv0zjU+WTu41u21snJcez+PszguVEDiIHGQOLRIm6Oyd11J1tyS96OI7XZSd1yd6lZydR6XszguVEDiIHGQOBRo3Zm27k4/9jcr4zCdc12y9myZNmsl9l/mqIDEQeJIHCQOgx25j0pM3dqcldeZ/5yjzpk2nvUDEgeJg8SROBzu4Sv433v/d53PA5r/DOjOd3cWB4kjcZA4SBw2+aARlax1QJ3vHnudzr/Jej6ROSogcZA4EgeJw1FaR1Q69yPtHJ3onHHRuUfK/Of4OIuDxJE4SBwkDpsUjqjsffrPtB1lVz5hbJwha5VN3SvbRwVcqIDEQeJIHC7n/vV6+hZwFgeJg8RB4iBxkDhIHImDxEHiIHGQOEgcJI7EQeIgcZA4SBwkDhIHiSNxONlfdMrkv3NAcQQAAAAASUVORK5CYII="},{"day":23,"url":"https://www.youtube.com/watch?v=HI-Ywbm8630","qr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAIAAABqcO2fAAAEwklEQVR42u3dS2ocMRRA0XaoLWQjgex/AYZsJBOPPXEW0BgU8X6qPmds9/ciuoRKevv6/HjAff3wESBxkDhIHCQOEgeJg8SROEgcJA4SB4mDxEHiSBwkDhIHiYPEQeIgcZA493dFPdDPX78b38bfP+9l7+L5uZ7/a+/1RH2GUa/wHt+pURw/VEDiIHGQOCS48h466oo46ko/at5j5Z1GPdfKI1d+F9O+U6M4SByJg8RB4tDkqnyyytmAlTmNvRUpebMBezMzz3+z91+V62ryZmaM4vihAhIHiYPEocT1Om81av4kb35g2soWozhIHCQOEgeJwzdeaEYlb3VH3it8Vrn+xCgOEgeJg8RB4vCN0hmV17muj7pXqPLenN71OUZxkDhIHImDxOEoiTMqJ95pErWTycqnEfVcK3MaUSttTvxOjeL4oQISB4mDxCFB2IzKPdafTDsveG+uZuVv9uZhjOIgcZA4SBwkDo/HI3BGZdoOJFEn+6zstbL3CvNmOaI+594dY4ziIHGQOBIHicNg43amjZp5qDx3eEXvapPe78soDhIHiYPEkTjcztvX50fIA1WeQRN1zT5tNqDyFObKlTZ5++IaxUHiSBwkDhKHJmEzKivX9XtX6FHX9Xuv+cR5ocr3FTUzYxQHiYPEkThIHI5SukYlSuX+HpXrPSrfaeXriZrzMYqDxJE4SBwkDmMkzqjkXbNXzmnsXftX3gtz4tqSyvuAjOL4oQISB4mDxCHBTdao5N2bEzU/EDVjkLf/SS/7qIDEQeJIHCQORwk762fa3qeV608qZwxO3E2393wiozh+qIDEQeIgcUgwbo3K/LtR9lSegJN3z1HvazaKg8SROEgcJA5jNJ+evHcVnzdXc+LOKtPWqPSelWwUxw8VkDhIHCQOJRJPT35WuQdI5S64eScR985XTPu+jOIgcSQOEgeJwxjNMyp58wzzzziuvCtq2rNHvR6jOEgciYPEQeLQpHRGZeUKvXctx7QTjaft+3riqhWjOH6ogMRB4iBxSBB21k/edX3e+pPKfUsq71TqXUkybTcYozh+qIDEQeIgcUhwVT7Z3qxL5bnMUY+TNzcyf13N3t+46wckDhJH4iBxOMq405N79e46u/JfK/JWgOS95r3nMoqDxJE4SBwkDk2u3qe/x3nBUe99b8XO3iPn3bu09xm66wckDhJH4iBxOErYjMrePEPef+Vdofeuxslb6xJ1+s/KbEnlnJhRHD9UQOIgcZA4JEjcmbbS81X8tJ1Mot5Xpby5o8r3ZRTHDxWQOEgcJA4JEu/66T3DN28X3Ki9VvZWbvTu5Rv17UR9X0ZxkDgSB4mDxKFJ81k/edf1Ua8wbweSyvmK3jtxonb3NYqDxJE4SBwkDmNcPoL/va6v3Ptl5W6mvDUzeWcYVc6xGMXxQwUkDhIHiUOCF5pR2btXaG82IOqR895F76ext++NURwkjsRB4iBxGKN0RqXy/p2884Dy1nvsva+8+4B6z1QyioPEQeJIHCQOgyXOqPRea0c9e94OJFGzLpX3AVU+u1EcJA4SR+IgcRjs7evzw6eAURwkDhIHiYPEQeIgcSQOEgeJg8RB4iBxkDgSB4mDxEHiIHGQOEgcJI7E4WT/AGmL72McRiDgAAAAAElFTkSuQmCC"},{"day":24,"url":"https://www.youtube.com/watch?v=OQSNhk5ICTI","qr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAIAAABqcO2fAAAEuklEQVR42u3dwY3bMBCGUW+gFtJIgPRfQIA0ksuefXEK8GEFYubnSPveOVnZ8gdCIkTq4/X8fMB9/XAKkDhIHCQOEgeJg8RB4kgcJA4SB4mDxEHiIHEkDhIHiYPEQeIgcZA4SJz7O6r+0M9fvzd+jX9//3z5ed7/zdq3qDpW3zlMno3kb2oUB4kjcZA4SBzGOPr+dNUdcdWd/tpsSZ+qeZjk0af9pkZxkDgSB4mDxGGTI3mwtbvmtbv4tec0+u7r145eNYMxbSYkOXdkFMeFCkgcJA4ShwbHXb9Y1TMYVbMcyTmNtZmi5CyHURwkDhIHiSNxuLjbzqhUzY307UlyxRU0RnGQOEgcJA4Sh8fjEZ5Rmf8UxJl5j6q1Qn3zHvdYT2QUB4mDxJE4SBwGa5xR2fukRNW+JcknW86csb3f64pPvxjFcaECEgeJg8Shwcfr+XnLL9b3JuLk0dc+z95dcI3iIHGQOEgcJM43UPaMSt/+qPPfJnPF+ZOq3zRZglEcJI7EQeIgcRjjkjvT7r2vT84LJT/h2uepWivUNwNmFMeFCkgcJA4ShwZlq36mzU70rXNJPrlRNTNTdVaTx/KMCkgcJI7EQeIwWOM+KnddrdO3g+vevWH37tDSt6+LURwXKiBxkDhIHBpE91Gp+jvJXWfX3r+TPHryF5z/5mijOC5UQOIgcZA4RGx+10/VXETVKpJpu6qufcL5/yv5piGjOC5UQOIgcZA4NGjcmXbajh/J5yL2nrG1c5hcm5Nc22UUx4UKSBwkDhKHBtF9VJLrgKatOUo+tXLm6Hvnl8yogMRB4iBxJA4X1/iMSt97daetzZm/m+7aWa36LYziIHGQOEgcicPtbH7Xz/x9OZK74PZJ7ohy5rvbRwUkDhIHiSNxuLjou37e/01yR5Tkm3+T5/DdmXf0VH3CM0ffu8LIKI4LFZA4SBwkDg3KnlFJzkUk1/j0PWmz9k2rfou+M9+32ssoDhJH4iBxkDiMUfaMSt+eJFVPtvTd16/NKiTfrbP396r6X0ZxkDgSB4mDxGGM6Kqfvnv/M/fjyadoqj7PtBU0a7+XVT8gcZA4SByJw+007kxbJbnupm9Vy/w1UHtXTlUdyyiOCxWQOEgcJA4RjW9PvsfbeKcdPbn/Sd8OwGu1GMVB4kgcJA4ShzFu8q6fvbMB7674luG1lUrTvoVRHBcqIHGQOEgcIqI7007bVbVqNiC5Wudd1dMdVSt6+t5SbRQHiSNxkDhIHMZofEYlqe9Jkr7ZgL4ztveJnb3rpIziuFABiYPEQeIQ0biPyt71KVWfuW8tzPzz3DdTlHxqxSiOCxWQOEgcJA4NjuTBku982bs2p+/ofee5b/VQ1f45RnGQOBIHiYPEYYzjrl+s6p697/mTvrcwr6n6PHvXfxnFcaECEgeJg8Qh4vjOX75qtqRvl5LkfMXeHW6N4iBxkDgSB4nDpURnVJL32n1zEX3zMFU7wSb3zu07ln1UQOIgcSQOEofBGmdU9q7+SN7pV+1eW3X0vjmWqu9+5mkcozhIHCSOxEHiMNjH6/npLGAUB4mDxEHiIHGQOEgciYPEQeIgcZA4SBwkjsRB4iBxkDhIHCQOEgeJI3G4sv/pPNo18fxPaAAAAABJRU5ErkJggg=="},{"day":25,"url":"https://www.youtube.com/watch?v=jbEXr9-5UjI","qr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAIAAABqcO2fAAAEyklEQVR42u3dwW3bQBCG0ThgC2kkQPovIEAaycVnX5wCBAObxT+zQ+m9sy2S0ocFuViSb58f79/geX33FSBxkDhIHCQOEgeJg8SROEgcJA4SB4mDxEHiSBwkDhIHiYPEQeIgcZA4z+9KfdCPn78OHsbfP7839vDxv1aOYuW/Vvan7jtM7eH839QoDhJH4iBxkDgcctV9dOqKeNqV/sqRpuZY9uZ86n6LO/6mRnGcqIDEQeIgcShwdW6sczagbkVK3WzA3szM49/s/Vfnupq6mRmjOE5UQOIgcZA4tLhe51BT8yd18wPTVrYYxUHiIHGQOEgcvvBCMyp18x6de9i5/sQoDhIHiYPEQeLwhdYZlWnX9dPmRlb+pu7enLPrc4ziIHGQOBIHicOtFM6o3PFOk9STTFa+jdS2VuY0UvcB3fE3NYrjRAUkDhIHiUOB2IzKc9xXcvZ+mdRcTeq4nuM3NYrjRAUkDhIHiUOB2IxKai3HnsdtTVuVUbfapG6fz94VZRQHiYPEkThIHAYbt0YlNfPQOROy4uxqkzp130/quIziOFEBiYPEQeJQ4O3z4z3yQXvX0Wff8zvtLcOdb2Gu+732tlU3L2QUx4kKSBwkDhKHArEZldSVfmp+ILWOpe7dxHWraKZ9h53fqlEcJyogcZA4SBxaFK5RqbvS3zNtbqTz3qWz+5MqwSgOEkfiIHGQOIxxdW6s8zkhj59T97zWs/fCpOaynmNeyCiOExWQOEgcJA4tDq9RSW2r7tr/7MqNs8ee2ueztRjFcaICEgeJg8ShQOFzVOY/YaPuKFaOq3MPn/UZvEZxkDgSB4mDxOGQ2F0/nc8kmfYG4dQ39mjluFZmSzrfxLT3X56jAhIHiSNxkDjcyrjnqHSuUVn55LpZhb2ZkM7VJndc/WIUx4kKSBwkDhKHFje46+fslX5qbqTzzUep1UGda1Q8RwUkDhJH4iBxuJXWu37mX7Ofna+oW3uTOorU1o3iIHGQOEgcicPNta5ROXsHTecnr2xr7xur+6/UPu99z3tbN4qDxJE4SBwkDoe0vj357Pt5V9S9K/ns1uvuOeqcyzKKg8SROEgcJA5jXHfc6dQdNHtPgq17asreke7NsaTmhVJb9xwVkDhIHImDxOFWXmiNyvwVIHX707muJrUta1RA4iBxJA4Sh8HGrVHpfJNO3VV86kj39rDz2bDz53yM4jhRAYmDxEHiUCA2o5KaDUhtKzU/0PnEj9Qedn6re99Y55yPURwnKiBxkDhIHAoUvj25U+pNxKlr/2l3vqR+0/lzYkZxnKiAxEHiIHFoUXjXT+dKktRswNm326TuS+p84/Per5P6vYziIHEkDhIHicMhrc9R6byuT+1Pao4lNWNQ99ySs0+v9a4fkDhIHImDxOFWLl/B/17X173DqO7dzZ3P+61bC2QUB4kjcZA4SBzGeKEZlbp7hVJbT73Hp/Nv6maKjOIgcZA4EgeJw2CtMyqdzyNNXenX3RmUOq7OeY+V/zKKg8RB4iBxkDgv4O3z4z3yQdPe9VP3tp26J5l0roep2+dpb6A2iuNEBSQOEgeJQ4HYjAoYxUHiIHGQOEgciYPEQeIgcZA4SBwkjsRB4iBxkDhIHCQOEgeJI3GQOEgcDvkH5ITv+TSLVQsAAAAASUVORK5CYII="}];
+// Release schedule uses America/New_York, consistently for every visitor.
+// December 1, 2026: door 1. December 25, 2026: door 25. All later dates: all openable.
+const RELEASE_TIME_ZONE='America/New_York';
+const KEY='internet-lols-advent-opened-daily-2026-v2';
+const calendar=document.getElementById('calendar');
+const decorations=['✦','❄','✳','✧','❋','✶','❄','✦','✳','❋','✷','❄','✦','✳','❅','✦','❋','✷','❄','✳','✧','❋','✶','❄','✦'];
+const colors=['door-red','door-green','door-blue','door-red','door-gold','door-green','door-clay','door-red','door-green','door-blue','door-gold','door-red','door-green','door-clay','door-red','door-green','door-blue','door-red','door-green','door-gold','door-clay','door-red','door-green','door-blue','door-red'];
+let opened=new Set();
+let availableDay=0;
+try {
+ const saved=JSON.parse(localStorage.getItem(KEY)||'[]');
+ if(Array.isArray(saved))opened=new Set(saved.filter(x=>Number.isInteger(x)&&x>=1&&x<=25));
+}catch(_error){}
+function getEasternDate(now=new Date()) {
+ const parts=new Intl.DateTimeFormat('en-US', {
+   timeZone:RELEASE_TIME_ZONE,year:'numeric',month:'2-digit',day:'2-digit'
+ }).formatToParts(now);
+ const o={};
+ for(const p of parts) if(p.type==='year'||p.type==='month'||p.type==='day')o[p.type]=Number(p.value);
+ return o;
+}
+function unlockedDays(now=new Date()) {
+ const {year,month,day}=getEasternDate(now);
+ const stamp=year*10000+month*100+day;
+ if(stamp<20261201)return 0;
+ if(stamp>=20261225)return 25;
+ return day; // In between, it is December 1–24, 2026.
+}
+function persist(){
+ try {localStorage.setItem(KEY,JSON.stringify([...opened].sort((a,b)=>a-b)))}catch(_error){}
+}
+function refreshProgress(){
+ const n=opened.size;
+ document.getElementById('count').textContent=`${n} of 25 doors opened`;
+ document.getElementById('progress-bar').style.width=`${n/25*100}%`;
+ document.getElementById('progress').setAttribute('aria-valuenow',String(n));
+ document.getElementById('reset').disabled=n===0;
+ const status=document.getElementById('unlock-status');
+ if(availableDay===0)status.textContent='Door 1 unlocks December 1, 2026 at 12:00 a.m. Eastern.';
+ else if(availableDay>=25)status.textContent='All 25 doors are now unlocked. Enjoy the surprises!';
+ else status.textContent=`Doors 1–${availableDay} unlocked · Door ${availableDay+1} opens Dec ${availableDay+1} at midnight Eastern.`;
+}
+function renderCardState(card){
+ const day=Number(card.dataset.day);
+ const isLocked=day>availableDay;
+ const isOpen=!isLocked&&opened.has(day);
+ const door=card.querySelector('.door');
+ const inside=card.querySelector('.inside');
+ const bottom=card.querySelector('.door-bottom');
+ card.classList.toggle('is-locked',isLocked);
+ card.classList.toggle('is-open',isOpen);
+ inside.inert=!isOpen;
+ door.disabled=isLocked;
+ door.setAttribute('aria-expanded',String(isOpen));
+ door.setAttribute('aria-label',isLocked?`Door ${day}, locked until December ${day}, 2026`:
+     isOpen?`Day ${day}, opened`:`Open door for December ${day}`);
+ door.title=isLocked?`Unlocks December ${day}, 2026 at midnight Eastern`:`Open December ${day}`;
+ bottom.textContent=isLocked?'🔒 DEC '+String(day).padStart(2,'0'):'OPEN ME';
+}
+function setDoor(card,isOpen){
+ const day=Number(card.dataset.day);
+ // Re-check at interaction time, including if the calendar has been left open for days.
+ syncAvailability();
+ if(isOpen&&day>availableDay)return;
+ if(isOpen)opened.add(day);else opened.delete(day);
+ renderCardState(card);
+ persist();refreshProgress();
+ if(isOpen)showMobileReveal(day);
+}
+function syncAvailability(){
+ const newAvailable=unlockedDays();
+ if(newAvailable!==availableDay)availableDay=newAvailable;
+ // Never carry over future opened states, including from an altered device clock.
+ for(const day of [...opened])if(day>availableDay)opened.delete(day);
+ document.querySelectorAll('.window').forEach(renderCardState);
+ persist();refreshProgress();
+}
+for(const video of VIDEOS){
+ const card=document.createElement('article');
+ card.className='window '+colors[(video.day-1)%colors.length];
+ card.dataset.day=String(video.day);
+ const day=String(video.day).padStart(2,'0');
+ // QR images and links are embedded locally, so an external QR-code service is not needed.
+ card.innerHTML=`
+   <div class="inside" id="inside-${day}">
+     <button type="button" class="close-door" aria-label="Close door ${video.day}" title="Close door">×</button>
+     <div class="unwrapped">SURPRISE ${day}</div>
+     <a class="qr-link" href="${video.url}" target="_blank" rel="noopener noreferrer" aria-label="Watch surprise video for December ${video.day}" title="Watch surprise video"><img loading="lazy" width="210" height="210" src="${video.qr}" alt="QR code for the surprise video on day ${video.day}"></a>
+     <a class="watch-link" href="${video.url}" target="_blank" rel="noopener noreferrer">WATCH SURPRISE ↗</a>
+     ${video.backupUrl ? '<a class="backup-link" href="' + video.backupUrl + '" target="_blank" rel="noopener noreferrer">VIDEO NOT LOADING? TRY ANOTHER LINK ↗</a>' : ''}
+   </div>
+   <button class="door" type="button" aria-controls="inside-${day}" aria-expanded="false" aria-label="Door ${video.day}, locked until December ${video.day}, 2026">
+     <span class="door-deco" aria-hidden="true">${decorations[video.day-1]}</span>
+     <span class="day-label" aria-hidden="true">${day}</span>
+     <span class="door-bottom" aria-hidden="true">🔒 DEC ${day}</span>
+   </button>`;
+ calendar.appendChild(card);
+ card.querySelector('.door').addEventListener('click',()=>setDoor(card,true));
+ card.querySelector('.close-door').addEventListener('click',()=>setDoor(card,false));
+}
+syncAvailability();
+// A page left open overnight unlocks the next door without needing a reload.
+window.setInterval(syncAvailability,30*1000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)syncAvailability()});
+document.getElementById('reset').addEventListener('click',()=>{
+ if(opened.size===0)return;
+ if(!window.confirm('Close your opened doors and reset your progress?'))return;
+ opened.clear();
+ syncAvailability();
+});
+if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+ const snow=document.getElementById('snow');
+ for(let i=0;i<21;i++){
+   const el=document.createElement('span');
+   el.className='snowflake';el.textContent=i%4===0?'❋':'·';
+   el.style.left=`${(i*37+14)%99}%`;
+   el.style.animationDuration=`${18+(i*7)%20}s`;
+   el.style.animationDelay=`-${(i*11)%37}s`;
+   el.style.opacity=String(.12+(i%4)*.035);
+   snow.appendChild(el);
+ }
+}
+
+// On touch-sized screens, the animated door also opens a full-size video reveal.
+const revealModal = document.getElementById('reveal-modal');
+const revealQr = document.getElementById('reveal-qr');
+const revealWatch = document.getElementById('reveal-watch');
+const revealBackup = document.getElementById('reveal-backup');
+const revealDay = document.getElementById('reveal-day');
+const mobileMq = window.matchMedia('(max-width:700px)');
+function showMobileReveal(day) {
+ const item = VIDEOS.find(v => v.day===day);
+ if(!item || !mobileMq.matches || !revealModal || typeof revealModal.showModal !== 'function')return;
+ revealDay.textContent = String(day).padStart(2, '0');
+ revealQr.src = item.qr;
+ revealQr.alt = `QR code for the surprise on day ${day}`;
+ revealWatch.href = item.url;
+ revealBackup.hidden = !item.backupUrl;
+ if(item.backupUrl)revealBackup.href = item.backupUrl;
+ window.setTimeout(()=>{
+   if(!revealModal.open){ revealModal.showModal(); }
+ }, 300);
+}
+document.getElementById('reveal-close').addEventListener('click',()=>revealModal.close());
+revealModal.addEventListener('click',event=>{if(event.target===revealModal)revealModal.close()});
+
+</script>
+
+
+</body>
+</html>
