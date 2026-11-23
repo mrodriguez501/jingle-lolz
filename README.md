@@ -30,9 +30,6 @@ jingle-lolz/
 ├── scripts/
 │   ├── validate.py                 # Standard-library checks used in GitHub Actions
 │   └── sync_videos.py              # Optional QR / link regeneration tool
-├── docs/
-│   ├── previews/                   # Design preview for project documentation
-│   └── legacy-printables/          # OLD paper calendar PDFs (see warning below)
 ├── .gitignore
 └── README.md
 ```
@@ -81,11 +78,9 @@ python scripts/validate.py
 
 This checks 25 sequential doors, HTTPS video links, backup parity, embedded QR PNGs, the 2026 date logic, and the four variants. It is also run automatically by GitHub Actions. It **does not** guarantee a YouTube/Vimeo video will play on every phone, so spot-check several videos yourself after deployment.
 
-## ⚠️ Spoilers and earlier PDF versions
+## ⚠️ Spoilers
 
 The answer key and video URLs are visible in the public repository, and the live page embeds the URLs. Share the calendar link with viewers who want to avoid spoilers.
-
-The older printables in `docs/legacy-printables/` may contain outdated video selections. Use [the current answer key](data/ANSWER_KEY.md) for the latest list.
 
 ## 🛠️ Troubleshooting
 
